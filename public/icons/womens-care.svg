@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="#15803d" stroke-width="2">
+  <path d="M100 180c40 0 70-30 70-70s-30-70-70-70S30 70 30 110s30 70 70 70z" />
+  <path d="M100 40c0 0-30 30-30 70c0 40 30 70 30 70" />
+  <path d="M100 40c0 0 30 30 30 70c0 40-30 70-30 70" />
+  <path d="M60 110h80" />
+  <path d="M100 70v80" />
+</svg>
+

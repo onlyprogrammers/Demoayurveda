@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="#15803d" stroke-width="2">
+  <path d="M100 20v160" />
+  <path d="M40 100h120" />
+  <circle cx="100" cy="100" r="60" />
+  <path d="M100 40c0 0-40 20-40 60c0 40 40 60 40 60" />
+  <path d="M100 40c0 0 40 20 40 60c0 40-40 60-40 60" />
+  <path d="M40 100c0 0 20-40 60-40c40 0 60 40 60 40" />
+  <path d="M40 100c0 0 20 40 60 40c40 0 60-40 60-40" />
+</svg>
+
