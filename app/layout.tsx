@@ -29,6 +29,7 @@ export default function RootLayout({
             <main className="flex-1">{children}</main>
             <Footer />
           </div>
+          <AppDownloadPopup />
         </ThemeProvider>
       </body>
     </html>
@@ -38,3 +39,4 @@ export default function RootLayout({
 
 
 import './globals.css'
+import AppDownloadPopup from "@/components/ui/appdownloadpopup"

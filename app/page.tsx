@@ -13,6 +13,7 @@ import DoctorCard from "@/components/doctor-card"
 import TestimonialCard from "@/components/testimonial-card"
 import TreatmentTypesSection from "@/components/treatment-types-section"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
+import treatment1 from "@/components/images/treatment1.png"
 import { cn } from "@/lib/utils"
 import ModernSlider from "@/components/slider/modern-slider"
 
@@ -183,8 +184,8 @@ export default function Home() {
                 </Button>
               </div>
             </div>
-            <div className="relative h-[400px] overflow-hidden rounded-lg">
-              <Image src="/about-image.jpg" alt="Holistic Treatment" fill className="object-cover" />
+            <div className="relative h-[400px] overflow-hidden rounded-lg justify-center bg-green-100">
+              <Image src={treatment1} alt="Holistic Treatment" fill className="object h-fit"  />
             </div>
           </div>
         </div>

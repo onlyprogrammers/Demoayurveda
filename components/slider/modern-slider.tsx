@@ -6,6 +6,10 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 import FallingElements from "./falling-elements"
 import { cn } from "@/lib/utils"
 import unanitharapy from '@/components/images/unani therapy.jpg'
+import Ayurvedic from '@/components/images/ayur-3.png'
+import homeotherapy from '@/components/images/homeo.jpg'
+import siddhatherapy from '@/components/images/siddha.webp'
+import naturotherapy from '@/components/images/naturopathy.jpg'
 import { useIsMobile } from "@/hooks/use-mobile"
 import Image from "next/image"
 
@@ -19,16 +23,23 @@ const slides = [
   },
   {
     id: 2,
-    title: "Expert Doctors",
-    description: "Our team of specialists brings years of experience and compassionate care to every patient.",
-    image: "/slider-images/doctor.jpg",
+    title: "Ayurveda Therapy",
+    description: "An ancient Indian healing system that restores balance between mind, body, and spirit using herbal remedies, diet, yoga, and lifestyle practices.",
+    image: Ayurvedic,
     color: "from-emerald-500/20 to-teal-400/20",
   },
   {
     id: 3,
-    title: "Modern Facilities",
-    description: "State-of-the-art equipment and comfortable environments for your healthcare needs.",
-    image: "/slider-images/facility.jpg",
+    title: "Naturopathy Therapy",
+    description: "A natural healing system that promotes the body's self-healing abilities through diet, exercise, herbal remedies, and lifestyle changes",
+    image: naturotherapy,
+    color: "from-purple-500/20 to-indigo-400/20",
+  },
+  {
+    id: 4,
+    title: "Homeopathy Therapy",
+    description: "A holistic medical system based on the principle of 'like cures like,' using highly diluted natural substances to stimulate the body's healing response.",
+    image: homeotherapy,
     color: "from-purple-500/20 to-indigo-400/20",
   },
 ]
@@ -57,7 +68,7 @@ export default function ModernSlider() {
   }, [])
 
   const handlePrevious = () => {
-    if (isAnimating) return
+    // if (isAnimating) return
     if (intervalRef.current) clearInterval(intervalRef.current)
 
     setDirection(-1)
@@ -66,7 +77,7 @@ export default function ModernSlider() {
   }
 
   const handleNext = () => {
-    if (isAnimating) return
+    // if (isAnimating) return
     if (intervalRef.current) clearInterval(intervalRef.current)
 
     setDirection(1)
