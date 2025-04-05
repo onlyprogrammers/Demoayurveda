@@ -15,6 +15,7 @@ export default function ContactPage() {
     email: "",
     phone: "",
     message: "",
+    therapy: "",
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [message, setMessage] = useState("")
@@ -36,7 +37,23 @@ export default function ContactPage() {
     setMessage("")
 
     // Simulate API call
-    setTimeout(() => {
+    const apiurl = "https://api.example.com/contact" // Replace with your API URL
+    const response = await fetch(apiurl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+    if (!response.ok) {
+      setMessage("Something went wrong. Please try again.")
+      setIsSubmitting(false)
+      return
+    }
+    else {
+
+      setMessage("Sending your message...")
+
       setIsSubmitting(false)
       setMessage("Thank you for your message. We will contact you shortly.")
       setFormData({
@@ -44,8 +61,9 @@ export default function ContactPage() {
         email: "",
         phone: "",
         message: "",
+        therapy: "",
       })
-    }, 1000)
+    }
   }
 
   return (
@@ -69,7 +87,7 @@ export default function ContactPage() {
               <Phone className="mr-4 h-6 w-6 text-green-700" />
               <div>
                 <h3 className="font-medium text-gray-900">Phone</h3>
-                <p className="mt-1 text-gray-600">+91 9870390739</p>
+                <p className="mt-1 text-gray-600">+91 0000000000</p>
               </div>
             </div>
             <div className="flex items-start">
@@ -109,6 +127,29 @@ export default function ContactPage() {
         <div className="rounded-lg border border-green-100 bg-white p-6 shadow-md">
           <h2 className="text-xl font-bold text-green-800">Send Us a Message</h2>
           <form onSubmit={handleSubmit} className="mt-6 space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="Therapy">Select Therapy*</Label>
+
+
+              <select
+                id="Therapy"
+                onChange={handleChange}
+                defaultValue=""
+                name="Therapy"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              >
+                <option value="" disabled>Choose a therapy</option>
+                <option value="Unani therapy">Unani therapy</option>
+                <option value="Yoga therapy">Yoga therapy</option>
+                <option value="Homepathy">Homepathy</option>
+                <option value="Siddha medicine">Siddha medicine</option>
+                <option value="Naturopathy">Naturopathy</option>
+                <option value="Ayurveda">Ayurveda</option>
+              </select>
+
+
+
+            </div>
             <div className="space-y-2">
               <Label htmlFor="name">Name*</Label>
               <Input

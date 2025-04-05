@@ -6,6 +6,7 @@ import ayurvedalogo from "@/components/images/logos/Ayurveda.PNG"
 import homeopathy from "@/components/images/logos/homeopathy logo.PNG"
 import naturopathy from "@/components/images/logos/naturopathy.PNG"
 import siddha from "@/components/images/logos/siddha medicine.PNG"
+import yoga from "@/components/images/logos/Yoga Therapy.PNG"
 
 interface TreatmentTypeProps {
   title: string
@@ -82,6 +83,12 @@ export default function TreatmentTypesSection() {
             description="One of India's oldest medical systems originating in Tamil Nadu, using herbs, minerals, and animal products."
             icon={siddha}
             href="/treatment-systems/siddha"
+          />
+          <TreatmentType
+            title="Yoga and Meditation"
+            description="Ancient practices that promote physical, mental, and spiritual well-being through postures, breathing techniques, and meditation."
+            icon={yoga}
+            href="/treatment-systems/yogatherapy"
           />
         </div>
 

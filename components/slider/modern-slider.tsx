@@ -12,6 +12,7 @@ import siddhatherapy from '@/components/images/siddha.webp'
 import naturotherapy from '@/components/images/naturopathy.jpg'
 import { useIsMobile } from "@/hooks/use-mobile"
 import Image from "next/image"
+import Link from "next/link"
 
 const slides = [
   {
@@ -123,7 +124,10 @@ export default function ModernSlider() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Learn More
+              <Link href="/contact" className="flex items-center gap-2">
+
+              Book Now
+              </Link>
             </motion.button>
           </motion.div>
         </AnimatePresence>

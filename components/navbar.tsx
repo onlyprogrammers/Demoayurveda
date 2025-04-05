@@ -47,7 +47,7 @@ export default function Navbar() {
             <Link href="/contact">Book Consultation</Link>
           </Button>
           <Button asChild className="bg-green-700 text-white hover:bg-green-800">
-            <Link href="/book-now">Book Now</Link>
+            {/* <Link href="/book-now">Book Now</Link> */}
           </Button>
         </div>
 
