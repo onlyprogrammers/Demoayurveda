@@ -5,17 +5,28 @@ import type React from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import HeroSlider from "@/components/hero-slider"
+// import HeroSlider from "@/components/hero-slider"
 import TreatmentCard from "@/components/treatment-card"
 import StatsSection from "@/components/stats-section"
-import ConsultationForm from "@/components/consultation-form"
-import DoctorCard from "@/components/doctor-card"
+// import ConsultationForm from "@/components/consultation-form"
+// import DoctorCard from "@/components/doctor-card"
 import TestimonialCard from "@/components/testimonial-card"
 import TreatmentTypesSection from "@/components/treatment-types-section"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import treatment1 from "@/components/images/treatment1.png"
 import { cn } from "@/lib/utils"
 import ModernSlider from "@/components/slider/modern-slider"
+
+// images for diseases
+import asthma from "@/components/images/diseas/asthma.JPG"
+import diabetes from "@/components/images/diseas/diabetes .JPG"
+import digestivedisorder from "@/components/images/diseas/digestive disorders.JPG"
+import headache from "@/components/images/diseas/headache.JPG"
+import ibs from "@/components/images/diseas/ibs & piles.JPG"
+import jointpain from "@/components/images/diseas/jointpain.JPG"
+import kidneydisorder from "@/components/images/diseas/kidney disorder.JPG"
+import skin from "@/components/images/diseas/skin disorders.JPG"
+
 
 export default function Home() {
   const treatmentTypesSection = useScrollAnimation()
@@ -57,18 +68,18 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 lg:grid-cols-6">
-            <TreatmentCard title="Pain Relief" icon="/icons/pain-relief.svg" href="/treatments/pain-relief" />
+            <TreatmentCard title="" icon={asthma} href="/treatments/pain-relief" />
             <TreatmentCard
-              title="Relaxation & Stress Relief"
-              icon="/icons/stress-relief.svg"
+              title=""
+              icon={diabetes}
               href="/treatments/stress-relief"
             />
-            <TreatmentCard title="Panchakarma Detox" icon="/icons/panchakarma.svg" href="/treatments/panchakarma" />
-            <TreatmentCard title="Fat and Weight Loss" icon="/icons/weight-loss.svg" href="/treatments/weight-loss" />
-            <TreatmentCard title="Women's Care" icon="/icons/womens-care.svg" href="/treatments/womens-care" />
+            <TreatmentCard title="" icon={digestivedisorder} href="/treatments/panchakarma" />
+            <TreatmentCard title="" icon={headache} href="/treatments/weight-loss" />
+            <TreatmentCard title="" icon={ibs} href="/treatments/womens-care" />
             <TreatmentCard
-              title="Other Illnesses"
-              icon="/icons/other-illnesses.svg"
+              title=""
+              icon={jointpain}
               href="/treatments/other-illnesses"
             />
           </div>
@@ -185,163 +196,14 @@ export default function Home() {
               </div>
             </div>
             <div className="relative h-[400px] overflow-hidden rounded-lg justify-center bg-green-100">
-              <Image src={treatment1} alt="Holistic Treatment" fill className="object h-fit"  />
+              <Image src={treatment1} alt="Holistic Treatment" fill className="object w-max" style={{width:"100%"}}  />
             </div>
           </div>
         </div>
       </section>
 
       {/* Doctors Section */}
-      <section className="bg-green-50 py-12 md:py-16" ref={doctorsSection.ref as React.RefObject<HTMLElement>}>
-        <div
-          className={cn(
-            "container px-4 md:px-6 transition-all duration-700 ease-out",
-            doctorsSection.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10",
-          )}
-        >
-          <div className="mb-10 text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-green-800 sm:text-4xl">Our Expert Doctors</h2>
-            <p className="mt-4 text-lg text-gray-600">
-              Consult with our team of certified doctors specializing in various traditional medical systems
-            </p>
-          </div>
-
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <DoctorCard
-              name="Dr. Kanchan Khachane"
-              image="/doctors/doctor-1.jpg"
-              experience="12+ years"
-              qualifications="BAMS, MA"
-              href="/doctors/dr-kanchan-khachane"
-            />
-            <DoctorCard
-              name="Dr. Kalpesh Galve"
-              image="/doctors/doctor-2.jpg"
-              experience="23+ years"
-              qualifications="BHMS"
-              href="/doctors/dr-kalpesh-galve"
-            />
-            <DoctorCard
-              name="Dr. Snehalata Raaut"
-              image="/doctors/doctor-3.jpg"
-              experience="15+ years"
-              qualifications="BNYS, MD"
-              href="/doctors/dr-snehalata-raaut"
-            />
-          </div>
-
-          <div className="mt-10 text-center">
-            <Button
-              asChild
-              variant="outline"
-              className="border-green-700 text-green-800 hover:bg-green-50 hover:text-green-900"
-            >
-              <Link href="/doctors">View All Doctors</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Consultation Form Section */}
-      <section className="py-12 md:py-16" ref={consultationSection.ref as React.RefObject<HTMLElement>}>
-        <div
-          className={cn(
-            "container px-4 md:px-6 transition-all duration-700 ease-out",
-            consultationSection.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10",
-          )}
-        >
-          <div className="grid gap-8 md:grid-cols-2 md:gap-12">
-            <div>
-              <h2 className="text-3xl font-bold tracking-tight text-green-800 sm:text-4xl">Book a Free Consultation</h2>
-              <p className="mt-4 text-lg text-gray-600">
-                Take the first step towards better health with a free consultation with our experts in traditional
-                medicine
-              </p>
-              <div className="mt-6 space-y-4">
-                <div className="flex items-start">
-                  <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-green-100 text-green-700">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="lucide lucide-check"
-                    >
-                      <path d="M20 6 9 17l-5-5" />
-                    </svg>
-                  </div>
-                  <p className="text-gray-600">Personalized health assessment</p>
-                </div>
-                <div className="flex items-start">
-                  <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-green-100 text-green-700">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="lucide lucide-check"
-                    >
-                      <path d="M20 6 9 17l-5-5" />
-                    </svg>
-                  </div>
-                  <p className="text-gray-600">Discuss your health concerns with experts</p>
-                </div>
-                <div className="flex items-start">
-                  <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-green-100 text-green-700">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="lucide lucide-check"
-                    >
-                      <path d="M20 6 9 17l-5-5" />
-                    </svg>
-                  </div>
-                  <p className="text-gray-600">Get a customized treatment plan</p>
-                </div>
-                <div className="flex items-start">
-                  <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-green-100 text-green-700">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="lucide lucide-check"
-                    >
-                      <path d="M20 6 9 17l-5-5" />
-                    </svg>
-                  </div>
-                  <p className="text-gray-600">No obligation to proceed with treatment</p>
-                </div>
-              </div>
-            </div>
-            <div>
-              <ConsultationForm />
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Testimonials Section */}
       <section className="bg-green-50 py-12 md:py-16" ref={testimonialsSection.ref as React.RefObject<HTMLElement>}>

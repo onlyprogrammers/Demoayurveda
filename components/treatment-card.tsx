@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils"
 
 interface TreatmentCardProps {
   title: string
-  icon: string
+  icon: any
   href: string
   className?: string
 }
