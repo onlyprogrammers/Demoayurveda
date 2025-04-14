@@ -16,6 +16,7 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import treatment1 from "@/components/images/treatment1.png"
 import { cn } from "@/lib/utils"
 import ModernSlider from "@/components/slider/modern-slider"
+import { Clock, PhoneCall, Video, HeartPulse } from "lucide-react"
 
 // images for diseases
 import asthma from "@/components/images/diseas/asthma.JPG"
@@ -95,125 +96,102 @@ export default function Home() {
       <StatsSection />
 
       {/* About Section */}
-      <section className="py-12 md:py-16" ref={aboutSection.ref as React.RefObject<HTMLElement>}>
-        <div
-          className={cn(
-            "container px-4 md:px-6 transition-all duration-700 ease-out",
-            aboutSection.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10",
-          )}
-        >
-          <div className="grid gap-8 md:grid-cols-2 md:gap-12">
-            <div>
-              <h2 className="text-3xl font-bold tracking-tight text-green-800 sm:text-4xl">
-                30+ years of Holistic Healthcare Expertise
-              </h2>
-              <p className="mt-4 text-lg text-gray-600">
-                Treated more than 20 lakh patients across 35+ countries worldwide with multiple traditional Indian
-                treatment systems
-              </p>
-              <div className="mt-6 space-y-4">
-                <div className="flex items-start">
-                  <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-green-100 text-green-700">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="lucide lucide-check"
-                    >
-                      <path d="M20 6 9 17l-5-5" />
-                    </svg>
-                  </div>
-                  <p className="text-gray-600">Multiple traditional Indian treatment systems under one roof</p>
-                </div>
-                <div className="flex items-start">
-                  <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-green-100 text-green-700">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="lucide lucide-check"
-                    >
-                      <path d="M20 6 9 17l-5-5" />
-                    </svg>
-                  </div>
-                  <p className="text-gray-600">Personalized treatment plans based on your unique constitution</p>
-                </div>
-                <div className="flex items-start">
-                  <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-green-100 text-green-700">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="lucide lucide-check"
-                    >
-                      <path d="M20 6 9 17l-5-5" />
-                    </svg>
-                  </div>
-                  <p className="text-gray-600">Holistic approach addressing the root cause of health issues</p>
-                </div>
-                <div className="flex items-start">
-                  <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-green-100 text-green-700">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="lucide lucide-check"
-                    >
-                      <path d="M20 6 9 17l-5-5" />
-                    </svg>
-                  </div>
-                  <p className="text-gray-600">Natural remedies prepared using traditional methods</p>
-                </div>
-              </div>
-              <div className="mt-8">
-                <Button asChild className="bg-green-700 text-white hover:bg-green-800">
-                  <Link href="/about">Learn More About Us</Link>
-                </Button>
-              </div>
+
+<section className="py-12 md:py-16" ref={aboutSection.ref as React.RefObject<HTMLElement>}>
+  <div
+    className={cn(
+      "container px-4 md:px-6 transition-all duration-700 ease-out",
+      aboutSection.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10",
+    )}
+  >
+    <div className="grid gap-8 md:grid-cols-2 md:gap-12">
+      <div>
+        <h2 className="text-3xl font-bold tracking-tight text-green-800 sm:text-4xl">
+          Your Wellness, Anytime & Anywhere
+        </h2>
+        <p className="mt-4 text-lg text-gray-600">
+          Get connected with certified doctors and personalized care—accessible from the comfort of your home.
+        </p>
+
+        <div className="mt-6 space-y-6">
+          {/* Availability */}
+          <div className="flex items-start">
+            <div className="mr-4 mt-1 flex h-10 w-10 items-center justify-center rounded-full bg-green-100 text-green-700">
+              <Clock className="h-5 w-5" />
             </div>
-            <div className="relative h-[400px] overflow-hidden rounded-lg justify-center bg-green-100">
-              <Image src={treatment1} alt="Holistic Treatment" fill className="object w-max" style={{width:"100%"}}  />
+            <div>
+              <h4 className="text-green-800 font-semibold text-base">Availability</h4>
+              <p className="text-gray-600 text-sm">Doctors available 24×7 for consultations and emergencies</p>
+            </div>
+          </div>
+
+          {/* Accessibility */}
+          <div className="flex items-start">
+            <div className="mr-4 mt-1 flex h-10 w-10 items-center justify-center rounded-full bg-green-100 text-green-700">
+              <PhoneCall className="h-5 w-5" />
+            </div>
+            <div>
+              <h4 className="text-green-800 font-semibold text-base">Accessibility</h4>
+              <p className="text-gray-600 text-sm">Connect via chat, voice, or video calls seamlessly</p>
+            </div>
+          </div>
+
+          {/* Personalized Plans */}
+          <div className="flex items-start">
+            <div className="mr-4 mt-1 flex h-10 w-10 items-center justify-center rounded-full bg-green-100 text-green-700">
+              <HeartPulse className="h-5 w-5" />
+            </div>
+            <div>
+              <h4 className="text-green-800 font-semibold text-base">Personalized Plans</h4>
+              <p className="text-gray-600 text-sm">Customized health plans combining modern and traditional care</p>
+            </div>
+          </div>
+
+          {/* Virtual Treatments */}
+          <div className="flex items-start">
+            <div className="mr-4 mt-1 flex h-10 w-10 items-center justify-center rounded-full bg-green-100 text-green-700">
+              <Video className="h-5 w-5" />
+            </div>
+            <div>
+              <h4 className="text-green-800 font-semibold text-base">Virtual Treatments</h4>
+              <p className="text-gray-600 text-sm">Receive expert care and guidance without stepping out</p>
             </div>
           </div>
         </div>
-      </section>
+
+        <div className="mt-8">
+          <Button asChild className="bg-green-700 text-white hover:bg-green-800">
+            <Link href="/about">Meet Our Medical Team</Link>
+          </Button>
+        </div>
+      </div>
+
+      <div className="relative h-[400px] overflow-hidden rounded-lg justify-center bg-green-100">
+        <Image
+          src={treatment1}
+          alt="Modern Holistic Healthcare"
+          fill
+          className="object w-max"
+          style={{ width: "100%" }}
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Doctors Section */}
       
 
       {/* Testimonials Section */}
-      <section className="bg-green-50 py-12 md:py-16" ref={testimonialsSection.ref as React.RefObject<HTMLElement>}>
+      <section className="bg-green-50 py-12 md:py-16" ref={testimonialsSection.ref as React.RefObject<HTMLElement>} style={{display:'none'}}>
         <div
           className={cn(
             "container px-4 md:px-6 transition-all duration-700 ease-out",
             testimonialsSection.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10",
           )}
         >
-          <div className="mb-10 text-center">
+          <div className="mb-10 text-center " >
             <h2 className="text-3xl font-bold tracking-tight text-green-800 sm:text-4xl">
               Demo Ayurveda Google Reviews
             </h2>
@@ -243,22 +221,11 @@ export default function Home() {
               rating={5}
               text="I had been suffering from chronic back pain for years. After just a few sessions of Ayurvedic treatment, I experienced significant relief. The doctors are knowledgeable and the staff is very caring."
             />
-            <TestimonialCard
-              name="Rahul Mehta"
-              rating={5}
-              text="The Homeopathic treatment completely transformed my health. I feel more energetic and my digestive issues have resolved. Highly recommend their approach to chronic conditions."
-            />
-            <TestimonialCard
-              name="Anjali Patel"
-              rating={4}
-              text="I visited for stress management and sleep issues. The combination of Naturopathy treatments and herbal medicines has made a huge difference. I'm sleeping better and feeling much more relaxed."
-            />
+            
           </div>
 
           <div className="mt-10 text-center">
-            <Button asChild className="bg-green-700 text-white hover:bg-green-800">
-              <Link href="/testimonials">Read More Reviews</Link>
-            </Button>
+            
           </div>
         </div>
       </section>

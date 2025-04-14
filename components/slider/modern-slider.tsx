@@ -17,28 +17,28 @@ import Link from "next/link"
 const slides = [
   {
     id: 1,
-    title: "Unani Therapy",
+    title: "Unani ",
     description: "A holistic healing system balancing the body's four humors using herbal remedies, diet, and natural therapies for wellness.",
     image: unanitharapy,
     color: "from-blue-500/20 to-cyan-400/20",
   },
   {
     id: 2,
-    title: "Ayurveda Therapy",
+    title: "Ayurveda ",
     description: "An ancient Indian healing system that restores balance between mind, body, and spirit using herbal remedies, diet, yoga, and lifestyle practices.",
     image: Ayurvedic,
     color: "from-emerald-500/20 to-teal-400/20",
   },
   {
     id: 3,
-    title: "Naturopathy Therapy",
+    title: "Naturopathy ",
     description: "A natural healing system that promotes the body's self-healing abilities through diet, exercise, herbal remedies, and lifestyle changes",
     image: naturotherapy,
     color: "from-purple-500/20 to-indigo-400/20",
   },
   {
     id: 4,
-    title: "Homeopathy Therapy",
+    title: "Homeopathy ",
     description: "A holistic medical system based on the principle of 'like cures like,' using highly diluted natural substances to stimulate the body's healing response.",
     image: homeotherapy,
     color: "from-purple-500/20 to-indigo-400/20",
@@ -124,7 +124,7 @@ export default function ModernSlider() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Link href="/contact" className="flex items-center gap-2">
+              <Link href="/book/therapy" className="flex items-center gap-2">
 
               Book Now
               </Link>
