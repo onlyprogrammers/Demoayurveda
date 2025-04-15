@@ -90,6 +90,13 @@ export default function TreatmentTypesSection() {
             icon={yoga}
             href="/treatment-systems/yogatherapy"
           />
+          <TreatmentType
+            title="Unani Medicine"
+            description="Traditional system of medicine based on the teachings of Hippocrates and Galen, focusing on the balance of bodily humors."
+            icon={homeopathy}
+            href="/treatment-systems/unani"
+          />
+           
         </div>
 
         <div className="mt-10 text-center">
