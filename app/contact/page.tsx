@@ -94,22 +94,10 @@ export default function ContactPage() {
               <Mail className="mr-4 h-6 w-6 text-green-700" />
               <div>
                 <h3 className="font-medium text-gray-900">Email</h3>
-                <p className="mt-1 text-gray-600">info@demoayurveda.com</p>
+                <p className="mt-1 text-gray-600">info@dayushclinic.com</p>
               </div>
             </div>
-            <div className="flex items-start">
-              <MapPin className="mr-4 h-6 w-6 text-green-700" />
-              <div>
-                <h3 className="font-medium text-gray-900">Address</h3>
-                <p className="mt-1 text-gray-600">
-                  Demo Ayurveda
-                  <br />
-                  Hiranandani Powai
-                  <br />
-                  Mumbai, India
-                </p>
-              </div>
-            </div>
+            
             <div className="flex items-start">
               <Clock className="mr-4 h-6 w-6 text-green-700" />
               <div>
@@ -210,20 +198,7 @@ export default function ContactPage() {
         </div>
       </div>
 
-      <div className="mt-12">
-        <h2 className="mb-6 text-2xl font-bold text-green-800">Our Location</h2>
-        <div className="h-[400px] w-full overflow-hidden rounded-lg">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.5!2d72.9!3d19.1!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDA2JzAwLjAiTiA3MsKwNTQnMDAuMCJF!5e0!3m2!1sen!2sin!4v1617000000000!5m2!1sen!2sin"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
-      </div>
+      
     </div>
   )
 }

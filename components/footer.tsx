@@ -9,7 +9,7 @@ export default function Footer() {
           <div>
             <h3 className="mb-4 text-lg font-semibold">Demo Ayurveda</h3>
             <p className="mb-4 text-green-100">
-              Authentic Kerala Ayurvedic Treatment Center in Hiranandani Powai, Mumbai India.
+              Authentic Kerala Ayurvedic Treatment Center in India.
             </p>
             <div className="flex space-x-4">
               <Link href="#" className="text-green-100 hover:text-white">
@@ -94,16 +94,13 @@ export default function Footer() {
             <ul className="space-y-3 text-green-100">
               <li className="flex items-start">
                 <Phone className="mr-2 h-5 w-5 shrink-0" />
-                <span>+91 9870390739</span>
+                <span>+91 0000000000</span>
               </li>
               <li className="flex items-start">
                 <Mail className="mr-2 h-5 w-5 shrink-0" />
-                <span>info@thapovanayurveda.com</span>
+                <span>info@dayushclinic.com</span>
               </li>
-              <li className="flex items-start">
-                <MapPin className="mr-2 h-5 w-5 shrink-0" />
-                <span>Hiranandani Powai, Mumbai, India</span>
-              </li>
+              
             </ul>
           </div>
         </div>
