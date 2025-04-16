@@ -225,7 +225,7 @@ export default function TherapyBookingPage() {
           className="mb-8"
           onValueChange={(value) => setSelectedTherapy(value as TherapyType)}
         >
-          <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center justify-between mb-4" style={{ overflowX:'scroll' }}>
             <TabsList>
               <TabsTrigger value="all">All Therapies</TabsTrigger>
               <TabsTrigger value="ayurveda">Ayurveda</TabsTrigger>
@@ -310,58 +310,7 @@ export default function TherapyBookingPage() {
         </section>
 
         {/* Popular Treatments Section */}
-        <section>
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-bold">Popular {formatTherapyName(selectedTherapy)} Treatments</h2>
-            <Button variant="ghost" size="sm">
-              View All
-            </Button>
-          </div>
-
-          {filteredTreatments.length === 0 ? (
-            <div className="text-center py-12 bg-gray-100 rounded-lg">
-              <p className="text-gray-500">No treatments found for the selected therapy.</p>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredTreatments.map((treatment) => (
-                <Card key={treatment.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-                  <div className="relative h-48">
-                    <Image
-                      src={treatment.image || "/placeholder.svg"}
-                      alt={treatment.name}
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                      <h3 className="text-white font-bold text-lg">{treatment.name}</h3>
-                    </div>
-                    <Badge className="absolute top-4 right-4 bg-red-500">
-                      <ThumbsUp className="h-3 w-3 mr-1" />
-                      {treatment.popularity}% Popular
-                    </Badge>
-                  </div>
-                  <CardContent className="pt-4">
-                    <p className="text-sm text-gray-600 mb-4">{treatment.description}</p>
-                    <div className="grid grid-cols-2 gap-2 text-sm">
-                      <div>
-                        <span className="text-gray-500">Duration:</span>
-                        <p className="font-medium">{treatment.duration}</p>
-                      </div>
-                      <div>
-                        <span className="text-gray-500">Price Range:</span>
-                        <p className="font-medium">{treatment.price}</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                  <CardFooter className="border-t pt-4">
-                    <Button className="w-full">Learn More</Button>
-                  </CardFooter>
-                </Card>
-              ))}
-            </div>
-          )}
-        </section>
+        
       </main>
 
     </div>

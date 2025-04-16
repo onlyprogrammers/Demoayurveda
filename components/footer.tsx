@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="container px-4 py-12 md:px-6">
         <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
           <div>
-            <h3 className="mb-4 text-lg font-semibold">Demo Ayurveda</h3>
+            <h3 className="mb-4 text-lg font-semibold">Dayush Clinic</h3>
             <p className="mb-4 text-green-100">
               Authentic Kerala Ayurvedic Treatment Center in India.
             </p>
