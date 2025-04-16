@@ -23,7 +23,7 @@ export default function Navbar() {
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2">
           <div className="flex items-center">
-            <Image src={mainlogo} alt="Logo" height={50} className="h-15" />
+            <Image src={mainlogo} alt="Logo" height={70} className="h-15" />
           </div>
         </Link>
 
