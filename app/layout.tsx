@@ -9,7 +9,7 @@ import Footer from "@/components/footer"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Demo Ayurveda - Authentic Ayurvedic Treatment Center",
+  title: "Dayush clinics - Authentic Ayurvedic Treatment Center",
   description:
     "Experience authentic Kerala Ayurvedic treatments for pain relief, stress management, detox, weight loss, and more.",
     generator: 'v0.dev'

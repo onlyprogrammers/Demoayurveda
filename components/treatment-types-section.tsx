@@ -64,37 +64,37 @@ export default function TreatmentTypesSection() {
             title="Ayurveda"
             description="Ancient Indian system of medicine focusing on balance between mind, body, and spirit using herbs, diet, and lifestyle."
             icon={ayurvedalogo}
-            href="/treatment-systems/ayurveda"
+            href="/book/ayurveda"
           />
           <TreatmentType
             title="Homeopathy"
             description="Alternative medical system based on the principle of 'like cures like' using highly diluted substances."
             icon={homeopathy}
-            href="/treatment-systems/homeopathy"
+            href="/book/homeopathy"
           />
           <TreatmentType
             title="Naturopathy"
             description="Natural healing approach that emphasizes the body's inherent ability to heal itself through diet, exercise, and lifestyle."
             icon={naturopathy}
-            href="/treatment-systems/naturopathy"
+            href="/book/naturopathy"
           />
           <TreatmentType
             title="Siddha Medicine"
             description="One of India's oldest medical systems originating in Tamil Nadu, using herbs, minerals, and animal products."
             icon={siddha}
-            href="/treatment-systems/siddha"
+            href="/book/siddha"
           />
           <TreatmentType
             title="Yoga and Meditation"
             description="Ancient practices that promote physical, mental, and spiritual well-being through postures, breathing techniques, and meditation."
             icon={yoga}
-            href="/treatment-systems/yogatherapy"
+            href="/book/yoga"
           />
           <TreatmentType
             title="Unani Medicine"
             description="Traditional system of medicine based on the teachings of Hippocrates and Galen, focusing on the balance of bodily humors."
             icon={homeopathy}
-            href="/treatment-systems/unani"
+            href="/book/unani"
           />
            
         </div>

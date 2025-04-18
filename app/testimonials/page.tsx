@@ -6,7 +6,7 @@ export default function TestimonialsPage() {
       <div className="mb-10 text-center">
         <h1 className="text-3xl font-bold tracking-tight text-green-800 sm:text-4xl md:text-5xl">Testimonials</h1>
         <p className="mt-4 text-lg text-gray-600">
-          Read what our patients have to say about their experience with Demo Ayurveda
+          Read what our patients have to say about their experience with Dayush clinics
         </p>
         <div className="mx-auto mt-4 flex items-center justify-center">
           <p className="mr-2 text-3xl font-bold text-green-800">4.9</p>
@@ -32,7 +32,7 @@ export default function TestimonialsPage() {
         <TestimonialCard
           name="Priya Sharma"
           rating={5}
-          text="I had been suffering from chronic back pain for years. After just a few sessions at Demo Ayurveda, I experienced significant relief. The doctors are knowledgeable and the staff is very caring."
+          text="I had been suffering from chronic back pain for years. After just a few sessions at Dayush clinics, I experienced significant relief. The doctors are knowledgeable and the staff is very caring."
         />
         <TestimonialCard
           name="Rahul Mehta"

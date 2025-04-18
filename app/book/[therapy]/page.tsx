@@ -10,6 +10,8 @@ import { Input } from "@/components/ui/input"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
+import { useParams } from "next/navigation"
+import { useRouter } from "next/router"
 
 // Types
 type Doctor = {
@@ -35,12 +37,20 @@ type Treatment = {
   duration: string
   price: string
 }
+interface PageProps {
+  params: {
+    therapy: string
+  }
+}
 
 type TherapyType = "unani" | "ayurveda" | "homeo" | "yoga" | "all"
 
-export default function TherapyBookingPage() {
+export default function TherapyBookingPage({ params }: PageProps) {
   // This would normally come from URL params or context
-  const [selectedTherapy, setSelectedTherapy] = useState<TherapyType>("ayurveda")
+  const { therapy } = useParams()
+  const therapyType = therapy as TherapyType
+
+  const [selectedTherapy, setSelectedTherapy] = useState<TherapyType>( therapyType || "all")
   const [searchQuery, setSearchQuery] = useState("")
 
   // Mock data for doctors
@@ -141,46 +151,7 @@ export default function TherapyBookingPage() {
       duration: "30-60 mins",
       price: "₹1,500 - ₹3,000",
     },
-    {
-      id: 3,
-      name: "Constitutional Homeopathy",
-      description: "Personalized treatment based on individual constitution",
-      therapyType: "homeo",
-      popularity: 92,
-      image: "/placeholder.svg?height=200&width=350",
-      duration: "Ongoing",
-      price: "₹800 - ₹2,000 per consultation",
-    },
-    {
-      id: 4,
-      name: "Therapeutic Yoga",
-      description: "Specialized yoga practices for specific health conditions",
-      therapyType: "yoga",
-      popularity: 90,
-      image: "/placeholder.svg?height=200&width=350",
-      duration: "60-90 mins per session",
-      price: "₹5,000 - ₹12,000 for package",
-    },
-    {
-      id: 5,
-      name: "Shirodhara",
-      description: "Relaxing oil flow therapy for stress relief and mental clarity",
-      therapyType: "ayurveda",
-      popularity: 87,
-      image: "/placeholder.svg?height=200&width=350",
-      duration: "45-60 mins",
-      price: "₹2,500 - ₹4,000",
-    },
-    {
-      id: 6,
-      name: "Ilaj-bil-Tadbeer",
-      description: "Regimenal therapy for various chronic conditions",
-      therapyType: "unani",
-      popularity: 82,
-      image: "/placeholder.svg?height=200&width=350",
-      duration: "Varies by condition",
-      price: "₹1,200 - ₹8,000",
-    },
+    
   ]
 
   // Filter doctors based on selected therapy
@@ -227,11 +198,13 @@ export default function TherapyBookingPage() {
         >
           <div className="flex items-center justify-between mb-4" style={{ overflowX:'scroll' }}>
             <TabsList>
-              <TabsTrigger value="all">All Therapies</TabsTrigger>
+              <TabsTrigger value="all">All </TabsTrigger>
               <TabsTrigger value="ayurveda">Ayurveda</TabsTrigger>
               <TabsTrigger value="unani">Unani</TabsTrigger>
               <TabsTrigger value="homeo">Homeopathy</TabsTrigger>
               <TabsTrigger value="yoga">Yoga</TabsTrigger>
+              <TabsTrigger value="Siddha">Siddha</TabsTrigger>
+              <TabsTrigger value="Naturopathy">Naturopathy</TabsTrigger>
             </TabsList>
 
             <div className="relative">

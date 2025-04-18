@@ -13,21 +13,24 @@ import naturotherapy from '@/components/images/naturopathy.jpg'
 import { useIsMobile } from "@/hooks/use-mobile"
 import Image from "next/image"
 import Link from "next/link"
+import { url } from "inspector"
 
 const slides = [
+  {
+    id: 2,
+    title: "Ayurveda ",
+    description: "An ancient Indian healing system that restores balance between mind, body, and spirit using herbal remedies, diet, yoga, and lifestyle practices.",
+    image: Ayurvedic,
+    color: "from-green-500/20 to-teal-400/10",
+    url: "book/ayurveda",
+  },
   {
     id: 1,
     title: "Unani ",
     description: "A holistic healing system balancing the body's four humors using herbal remedies, diet, and natural therapies for wellness.",
     image: unanitharapy,
     color: "from-blue-500/20 to-cyan-400/20",
-  },
-  {
-    id: 2,
-    title: "Ayurveda ",
-    description: "An ancient Indian healing system that restores balance between mind, body, and spirit using herbal remedies, diet, yoga, and lifestyle practices.",
-    image: Ayurvedic,
-    color: "from-emerald-500/20 to-teal-400/20",
+    url: "book/unani",
   },
   {
     id: 3,
@@ -35,6 +38,7 @@ const slides = [
     description: "A natural healing system that promotes the body's self-healing abilities through diet, exercise, herbal remedies, and lifestyle changes",
     image: naturotherapy,
     color: "from-purple-500/20 to-indigo-400/20",
+    url: "book/naturopathy",
   },
   {
     id: 4,
@@ -42,7 +46,25 @@ const slides = [
     description: "A holistic medical system based on the principle of 'like cures like,' using highly diluted natural substances to stimulate the body's healing response.",
     image: homeotherapy,
     color: "from-purple-500/20 to-indigo-400/20",
+    url: "book/homeo",
   },
+  {
+    id: 5,
+    title: "Siddha ",
+    description: "An ancient Indian healing system focusing on the balance of body, mind, and spirit through herbal remedies, yoga, and meditation.",
+    image: siddhatherapy,
+    color: "from-orange-500/20 to-amber-400/20",
+    url: "book/siddha",
+  },
+  {
+    id: 6,
+    title: "Yoga ",
+    description: "A holistic approach to health that combines physical postures, breathing exercises, and meditation to promote physical and mental well-being.",
+    image: "/placeholder.svg",
+    color: "from-orange-500/20 to-amber-400/20",
+    url: "book/yoga",
+  },
+
 ]
 
 export default function ModernSlider() {
@@ -91,7 +113,7 @@ export default function ModernSlider() {
   const currentSlide = slides[currentIndex]
 
   return (
-    <div className="relative w-full h-[500px] md:h-[600px] overflow-hidden rounded-xl">
+    <div className="relative w-full h-[400px] md:h-[600px] overflow-hidden rounded-xl py-2">
       {/* Background gradient */}
       <motion.div
         className={cn("absolute inset-0 bg-gradient-to-r opacity-70 transition-all duration-700", currentSlide.color)}
@@ -124,7 +146,7 @@ export default function ModernSlider() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Link href="/book/therapy" className="flex items-center gap-2">
+              <Link href={currentSlide.url} className="flex items-center gap-2">
 
               Book Now
               </Link>

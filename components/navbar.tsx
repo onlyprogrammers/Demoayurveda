@@ -20,10 +20,10 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white">
-      <div className="container flex h-16 items-center justify-between px-4 md:px-6">
+      <div className="container flex h-25 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2">
           <div className="flex items-center">
-            <Image src={mainlogo} alt="Logo" height={70} className="h-15" />
+            <Image src={mainlogo} alt="Logo" height={100} className="h-25" />
           </div>
         </Link>
 
@@ -32,7 +32,7 @@ export default function Navbar() {
             <Link
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-green-800 transition-colors hover:text-green-600"
+              className="text-lg font-medium text-green-800 transition-colors hover:text-green-600"
             >
               {link.name}
             </Link>
@@ -45,7 +45,7 @@ export default function Navbar() {
             variant="outline"
             className="border-green-700 text-green-800 hover:bg-green-50 hover:text-green-900"
           >
-            <Link href="/contact">Book Consultation</Link>
+            <Link href="/book/all">Book Consultation</Link>
           </Button>
           <Button asChild className="bg-green-700 text-white hover:bg-green-800">
             {/* <Link href="/book-now">Book Now</Link> */}

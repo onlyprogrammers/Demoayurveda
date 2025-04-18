@@ -12,9 +12,9 @@ interface TreatmentCardProps {
 export default function TreatmentCard({ title, icon, href, className }: TreatmentCardProps) {
   return (
     <Link
-      href={href}
+      href={"/moreabout/"+href}
       className={cn(
-        "group flex flex-col items-center rounded-lg border border-green-100 bg-white p-6 text-center shadow-sm transition-all hover:border-green-200 hover:shadow-md hover:translate-y-[-4px]",
+        "group flex flex-col items-center rounded-lg border border-green-100 bg-white p-0 text-center shadow-sm transition-all hover:border-green-200 hover:shadow-md hover:translate-y-[-4px]",
         className,
       )}
     >
@@ -22,8 +22,8 @@ export default function TreatmentCard({ title, icon, href, className }: Treatmen
         <Image
           src={icon || "/placeholder.svg?height=128&width=128"}
           alt={title}
-          width={128}
-          height={128}
+          width={148}
+          height={148}
           className="h-full w-full object-contain"
         />
       </div>

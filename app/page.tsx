@@ -69,19 +69,19 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 lg:grid-cols-6">
-            <TreatmentCard title="" icon={asthma} href="/treatments/pain-relief" />
+            <TreatmentCard title="" icon={asthma} href="asthma" />
             <TreatmentCard
               title=""
               icon={diabetes}
-              href="/treatments/stress-relief"
+              href="diabetes"
             />
-            <TreatmentCard title="" icon={digestivedisorder} href="/treatments/panchakarma" />
-            <TreatmentCard title="" icon={headache} href="/treatments/weight-loss" />
-            <TreatmentCard title="" icon={ibs} href="/treatments/womens-care" />
+            <TreatmentCard title="" icon={digestivedisorder} href="digestivedisorder" />
+            <TreatmentCard title="" icon={headache} href="headache" />
+            <TreatmentCard title="" icon={ibs} href="ibs" />
             <TreatmentCard
               title=""
               icon={jointpain}
-              href="/treatments/other-illnesses"
+              href="other-illnesses-which-cured-by-different-therapies"
             />
           </div>
 
@@ -193,7 +193,7 @@ export default function Home() {
         >
           <div className="mb-10 text-center " >
             <h2 className="text-3xl font-bold tracking-tight text-green-800 sm:text-4xl">
-              Demo Ayurveda Google Reviews
+              Dayush clinics Google Reviews
             </h2>
             <div className="mx-auto mt-4 flex items-center justify-center">
               <p className="mr-2 text-3xl font-bold text-green-800">4.9</p>

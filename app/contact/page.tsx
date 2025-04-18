@@ -83,13 +83,7 @@ export default function ContactPage() {
           </p>
 
           <div className="mt-8 space-y-6">
-            <div className="flex items-start">
-              <Phone className="mr-4 h-6 w-6 text-green-700" />
-              <div>
-                <h3 className="font-medium text-gray-900">Phone</h3>
-                <p className="mt-1 text-gray-600">+91 0000000000</p>
-              </div>
-            </div>
+          
             <div className="flex items-start">
               <Mail className="mr-4 h-6 w-6 text-green-700" />
               <div>
@@ -103,9 +97,9 @@ export default function ContactPage() {
               <div>
                 <h3 className="font-medium text-gray-900">Working Hours</h3>
                 <p className="mt-1 text-gray-600">
-                  Monday - Saturday: 9:00 AM - 7:00 PM
+                  24/7 Availability
                   <br />
-                  Sunday: 10:00 AM - 2:00 PM
+                  `Monday to Sunday`
                 </p>
               </div>
             </div>
@@ -116,7 +110,7 @@ export default function ContactPage() {
           <h2 className="text-xl font-bold text-green-800">Send Us a Message</h2>
           <form onSubmit={handleSubmit} className="mt-6 space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="Therapy">Select Therapy*</Label>
+              <Label htmlFor="Therapy">Select category</Label>
 
 
               <select
@@ -126,9 +120,9 @@ export default function ContactPage() {
                 name="Therapy"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               >
-                <option value="" disabled>Choose a therapy</option>
-                <option value="Unani therapy">Unani therapy</option>
-                <option value="Yoga therapy">Yoga therapy</option>
+                <option value="" disabled>Choose a Treatment</option>
+                <option value="Unani therapy">Unani </option>
+                <option value="Yoga therapy">Yoga </option>
                 <option value="Homepathy">Homepathy</option>
                 <option value="Siddha medicine">Siddha medicine</option>
                 <option value="Naturopathy">Naturopathy</option>

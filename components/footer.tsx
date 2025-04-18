@@ -7,24 +7,11 @@ export default function Footer() {
       <div className="container px-4 py-12 md:px-6">
         <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
           <div>
-            <h3 className="mb-4 text-lg font-semibold">Dayush Clinic</h3>
+            <h3 className="mb-4 text-lg font-semibold">Dayush Clinics</h3>
             <p className="mb-4 text-green-100">
-              Authentic Kerala Ayurvedic Treatment Center in India.
+              Ayurvedic and different Treatment Center in India.
             </p>
-            <div className="flex space-x-4">
-              <Link href="#" className="text-green-100 hover:text-white">
-                <Facebook className="h-5 w-5" />
-                <span className="sr-only">Facebook</span>
-              </Link>
-              <Link href="#" className="text-green-100 hover:text-white">
-                <Instagram className="h-5 w-5" />
-                <span className="sr-only">Instagram</span>
-              </Link>
-              <Link href="#" className="text-green-100 hover:text-white">
-                <Twitter className="h-5 w-5" />
-                <span className="sr-only">Twitter</span>
-              </Link>
-            </div>
+            
           </div>
 
           <div>
@@ -92,10 +79,7 @@ export default function Footer() {
           <div>
             <h3 className="mb-4 text-lg font-semibold">Contact Us</h3>
             <ul className="space-y-3 text-green-100">
-              <li className="flex items-start">
-                <Phone className="mr-2 h-5 w-5 shrink-0" />
-                <span>+91 0000000000</span>
-              </li>
+           
               <li className="flex items-start">
                 <Mail className="mr-2 h-5 w-5 shrink-0" />
                 <span>info@dayushclinic.com</span>
@@ -106,7 +90,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 border-t border-green-800 pt-8 text-center text-sm text-green-100">
-          <p>&copy; {new Date().getFullYear()} Demo Ayurveda. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Dayush clinics. All rights reserved.</p>
         </div>
       </div>
     </footer>
