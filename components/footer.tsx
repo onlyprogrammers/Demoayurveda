@@ -49,27 +49,27 @@ export default function Footer() {
             <h3 className="mb-4 text-lg font-semibold">Treatments</h3>
             <ul className="space-y-2 text-green-100">
               <li>
-                <Link href="/treatments/pain-relief" className="hover:text-white">
+                <Link href="/moreabout/pain-relief" className="hover:text-white">
                   Pain Relief
                 </Link>
               </li>
               <li>
-                <Link href="/treatments/stress-relief" className="hover:text-white">
+                <Link href="/moreabout/stress-relief" className="hover:text-white">
                   Relaxation & Stress Relief
                 </Link>
               </li>
               <li>
-                <Link href="/treatments/panchakarma" className="hover:text-white">
+                <Link href="/moreabout/panchakarma" className="hover:text-white">
                   Panchakarma Detox
                 </Link>
               </li>
               <li>
-                <Link href="/treatments/weight-loss" className="hover:text-white">
+                <Link href="/moreabout/weight-loss" className="hover:text-white">
                   Fat and Weight Loss
                 </Link>
               </li>
               <li>
-                <Link href="/treatments/womens-care" className="hover:text-white">
+                <Link href="/moreabout/womens-care" className="hover:text-white">
                   Women's Care
                 </Link>
               </li>
@@ -82,7 +82,7 @@ export default function Footer() {
            
               <li className="flex items-start">
                 <Mail className="mr-2 h-5 w-5 shrink-0" />
-                <span>info@dayushclinic.com</span>
+                <span>dayushclinics@gmail.com</span>
               </li>
               
             </ul>

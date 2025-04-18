@@ -79,3 +79,37 @@ html {
   animation: fadeIn 0.5s ease-out forwards;
 }
 
+@media screen and (prefers-reduced-motion: reduce) {
+  .animate-fadeIn {
+    animation: none;
+  }
+  
+}
+
+@media screen and (max-width: 568px) {
+  /* Add custom styles for mobile devices */
+  body {
+    font-size: 0.875rem; /* Adjust font size for mobile */
+  }
+  
+  .container {
+    padding: 1rem; /* Adjust padding for mobile */
+  }
+  
+  .card {
+    margin: 0.5rem; /* Adjust card margin for mobile */
+  }
+  .button {
+    padding: 0.5rem 1rem; /* Adjust button padding for mobile */
+  }
+  .mainnav{
+    height: 60px !important; /* Adjust height for mobile */
+  }
+  .mainlogo{
+    height: 65px !important; /* Adjust logo size for mobile */
+    width: auto !important; /* Adjust logo size for mobile */
+  }
+  .modern-slider {
+    height: auto !important; /* Adjust slider height for mobile */
+  }
+}

@@ -88,7 +88,7 @@ export default function ContactPage() {
               <Mail className="mr-4 h-6 w-6 text-green-700" />
               <div>
                 <h3 className="font-medium text-gray-900">Email</h3>
-                <p className="mt-1 text-gray-600">info@dayushclinic.com</p>
+                <p className="mt-1 text-gray-600">dayushclinics@gmail.com</p>
               </div>
             </div>
             

@@ -13,7 +13,6 @@ import naturotherapy from '@/components/images/naturopathy.jpg'
 import { useIsMobile } from "@/hooks/use-mobile"
 import Image from "next/image"
 import Link from "next/link"
-import { url } from "inspector"
 
 const slides = [
   {
@@ -21,7 +20,7 @@ const slides = [
     title: "Ayurveda ",
     description: "An ancient Indian healing system that restores balance between mind, body, and spirit using herbal remedies, diet, yoga, and lifestyle practices.",
     image: Ayurvedic,
-    color: "from-green-500/20 to-teal-400/10",
+    color: "from-green-500/20 to-emerald-400/20",
     url: "book/ayurveda",
   },
   {
@@ -29,7 +28,7 @@ const slides = [
     title: "Unani ",
     description: "A holistic healing system balancing the body's four humors using herbal remedies, diet, and natural therapies for wellness.",
     image: unanitharapy,
-    color: "from-blue-500/20 to-cyan-400/20",
+    color: "from-blue-500/20 to-sky-400/20",
     url: "book/unani",
   },
   {
@@ -37,7 +36,7 @@ const slides = [
     title: "Naturopathy ",
     description: "A natural healing system that promotes the body's self-healing abilities through diet, exercise, herbal remedies, and lifestyle changes",
     image: naturotherapy,
-    color: "from-purple-500/20 to-indigo-400/20",
+    color: "from-purple-500/10 to-indigo-400/20",
     url: "book/naturopathy",
   },
   {
@@ -113,10 +112,10 @@ export default function ModernSlider() {
   const currentSlide = slides[currentIndex]
 
   return (
-    <div className="relative w-full h-[400px] md:h-[600px] overflow-hidden rounded-xl py-2">
+    <div className="relative w-full h-[400px] md:h-[400px] overflow-hidden rounded-xl py-2 modern-slider">
       {/* Background gradient */}
       <motion.div
-        className={cn("absolute inset-0 bg-gradient-to-r opacity-70 transition-all duration-700", currentSlide.color)}
+        className={cn("absolute inset-0 bg-gradient-to-r opacity-100 transition-all duration-700", currentSlide.color)}
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.7 }}
         key={currentSlide.id}
