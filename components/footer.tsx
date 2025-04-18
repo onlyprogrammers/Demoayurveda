@@ -9,7 +9,7 @@ export default function Footer() {
           <div>
             <h3 className="mb-4 text-lg font-semibold">Dayush Clinics</h3>
             <p className="mb-4 text-green-100">
-              Ayurvedic and different Treatment Center in India.
+              One stop solution for alternate medicine consultations.
             </p>
             
           </div>
@@ -24,7 +24,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/treatments" className="hover:text-white">
-                  Our Treatments
+                  Our Specializations
                 </Link>
               </li>
               <li>

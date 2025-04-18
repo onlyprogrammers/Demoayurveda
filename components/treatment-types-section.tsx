@@ -52,7 +52,7 @@ export default function TreatmentTypesSection() {
     <section className="py-12 md:py-16 bg-green-50">
       <div className="container px-4 md:px-6">
         <div className="mb-10 text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-green-800 sm:text-4xl">Our Treatment Systems</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-green-800 sm:text-4xl">Our Specializations</h2>
           <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
             We offer a comprehensive range of traditional Indian medical systems to provide holistic healthcare
             solutions tailored to your needs
