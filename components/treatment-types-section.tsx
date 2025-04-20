@@ -41,7 +41,7 @@ function TreatmentType({ title, description, icon, href, className }: TreatmentT
         variant="outline"
         className="mt-4 border-green-700 text-green-800 hover:bg-green-50 hover:text-green-900"
       >
-        <Link href={href}>Learn More</Link>
+        <Link href={href}>Book Now</Link>
       </Button>
     </div>
   )
