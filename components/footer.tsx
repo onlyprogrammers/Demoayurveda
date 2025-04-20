@@ -32,11 +32,7 @@ export default function Footer() {
                   Our Doctors
                 </Link>
               </li>
-              <li>
-                <Link href="/testimonials" className="hover:text-white">
-                  Testimonials
-                </Link>
-              </li>
+             
               <li>
                 <Link href="/contact" className="hover:text-white">
                   Contact Us

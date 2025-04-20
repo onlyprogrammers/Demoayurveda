@@ -11,7 +11,6 @@ import mainlogo from '@/components/images/logos/mainlogo.png'
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about" },
-  { name: "Testimonials", href: "/testimonials" },
   { name: "Contact", href: "/contact" },
 ]
 
