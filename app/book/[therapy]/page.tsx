@@ -182,7 +182,7 @@ export default function TherapyBookingPage({ params }: PageProps) {
         {/* Therapy Banner */}
         <div className="relative w-full h-48 rounded-xl overflow-hidden mb-6 bg-gradient-to-r from-green-600 to-emerald-400">
           <div className="absolute inset-0 flex flex-col justify-center px-8 text-white">
-            <h1 className="text-3xl font-bold mb-2">{formatTherapyName(selectedTherapy)} Therapy</h1>
+            <h1 className="text-3xl font-bold mb-2">{formatTherapyName(selectedTherapy)} </h1>
             <p className="text-lg max-w-2xl">
               Discover the best {formatTherapyName(selectedTherapy)} practitioners and popular treatments to improve
               your health and wellbeing.

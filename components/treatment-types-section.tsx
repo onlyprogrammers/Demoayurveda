@@ -39,7 +39,7 @@ function TreatmentType({ title, description, icon, href, className }: TreatmentT
       <Button
         asChild
         variant="outline"
-        className="mt-4 border-green-700 text-green-800 hover:bg-green-50 hover:text-green-900"
+        className="mt-4 border-green-700 text-white bg-green-700 hover:bg-green-50 hover:text-green-900"
       >
         <Link href={href}>Book Now</Link>
       </Button>
@@ -59,7 +59,7 @@ export default function TreatmentTypesSection() {
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           <TreatmentType
             title="Ayurveda"
             description="Ancient Indian system of medicine focusing on balance between mind, body, and spirit using herbs, diet, and lifestyle."

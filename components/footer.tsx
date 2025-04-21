@@ -8,8 +8,8 @@ export default function Footer() {
         <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
           <div>
             <h3 className="mb-4 text-lg font-semibold">Dayush Clinics</h3>
-            <p className="mb-4 text-green-100">
-              One stop solution for alternate medicine consultations.
+            <p className="mb-4 text-green-100 ">
+              One Stop Solution For Alternate Medicine Consultations.
             </p>
             
           </div>

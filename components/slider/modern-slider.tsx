@@ -10,6 +10,7 @@ import Ayurvedic from '@/components/images/ayur-3.png'
 import homeotherapy from '@/components/images/homeo.jpg'
 import siddhatherapy from '@/components/images/siddha.webp'
 import naturotherapy from '@/components/images/naturopathy.jpg'
+import yoga from '@/components/images/yoga.jpeg'
 import { useIsMobile } from "@/hooks/use-mobile"
 import Image from "next/image"
 import Link from "next/link"
@@ -20,7 +21,7 @@ const slides = [
     title: "Ayurveda ",
     description: "An ancient Indian healing system that restores balance between mind, body, and spirit using herbal remedies, diet, yoga, and lifestyle practices.",
     image: Ayurvedic,
-    color: "from-green-500/20 to-emerald-400/20",
+    color: "bg-green-300",
     url: "book/ayurveda",
   },
   {
@@ -28,7 +29,7 @@ const slides = [
     title: "Unani ",
     description: "A holistic healing system balancing the body's four humors using herbal remedies, diet, and natural therapies for wellness.",
     image: unanitharapy,
-    color: "from-blue-500/20 to-sky-400/20",
+    color: "bg-blue-300",
     url: "book/unani",
   },
   {
@@ -36,7 +37,7 @@ const slides = [
     title: "Naturopathy ",
     description: "A natural healing system that promotes the body's self-healing abilities through diet, exercise, herbal remedies, and lifestyle changes",
     image: naturotherapy,
-    color: "from-purple-500/10 to-indigo-400/20",
+    color: "bg-gray-400",
     url: "book/naturopathy",
   },
   {
@@ -44,7 +45,7 @@ const slides = [
     title: "Homeopathy ",
     description: "A holistic medical system based on the principle of 'like cures like,' using highly diluted natural substances to stimulate the body's healing response.",
     image: homeotherapy,
-    color: "from-purple-500/20 to-indigo-400/20",
+    color: "bg-purple-300",
     url: "book/homeo",
   },
   {
@@ -52,15 +53,15 @@ const slides = [
     title: "Siddha ",
     description: "An ancient Indian healing system focusing on the balance of body, mind, and spirit through herbal remedies, yoga, and meditation.",
     image: siddhatherapy,
-    color: "from-orange-500/20 to-amber-400/20",
+    color: "bg-orange-500/20",
     url: "book/siddha",
   },
   {
     id: 6,
     title: "Yoga ",
     description: "A holistic approach to health that combines physical postures, breathing exercises, and meditation to promote physical and mental well-being.",
-    image: "/placeholder.svg",
-    color: "from-orange-500/20 to-amber-400/20",
+    image: yoga,
+    color: "bg-yellow-200",
     url: "book/yoga",
   },
 

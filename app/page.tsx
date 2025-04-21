@@ -120,7 +120,7 @@ export default function Home() {
               <Clock className="h-5 w-5" />
             </div>
             <div>
-              <h4 className="text-green-800 font-semibold text-base">Availability</h4>
+              <h4 className="text-green-800 font-semibold text-base">Digital Availability</h4>
               <p className="text-gray-600 text-sm">Doctors available 24×7 for consultations and emergencies</p>
             </div>
           </div>
@@ -131,7 +131,7 @@ export default function Home() {
               <PhoneCall className="h-5 w-5" />
             </div>
             <div>
-              <h4 className="text-green-800 font-semibold text-base">Accessibility</h4>
+              <h4 className="text-green-800 font-semibold text-base">Anytime Accessibility</h4>
               <p className="text-gray-600 text-sm">Connect via chat, voice, or video calls seamlessly</p>
             </div>
           </div>
@@ -142,7 +142,7 @@ export default function Home() {
               <HeartPulse className="h-5 w-5" />
             </div>
             <div>
-              <h4 className="text-green-800 font-semibold text-base">Personalized Plans</h4>
+              <h4 className="text-green-800 font-semibold text-base">Your Care Plans</h4>
               <p className="text-gray-600 text-sm">Customized health plans combining modern and traditional care</p>
             </div>
           </div>
@@ -153,8 +153,28 @@ export default function Home() {
               <Video className="h-5 w-5" />
             </div>
             <div>
-              <h4 className="text-green-800 font-semibold text-base">Virtual Treatments</h4>
-              <p className="text-gray-600 text-sm">Receive expert care and guidance without stepping out</p>
+              <h4 className="text-green-800 font-semibold text-base">Ultra Care & Comfort</h4>
+              <p className="text-gray-600 text-sm">Receive expert care and guidance without stepping out through virtual consultations</p>
+            </div>
+          </div>
+          {/* Virtual Treatments */}
+          <div className="flex items-start">
+            <div className="mr-4 mt-1 flex h-10 w-10 items-center justify-center rounded-full bg-green-100 text-green-700">
+              <Video className="h-5 w-5" />
+            </div>
+            <div>
+              <h4 className="text-green-800 font-semibold text-base">sustained support</h4>
+              <p className="text-gray-600 text-sm">Continuous support and anytime/anywhere prescription healing download and call us </p>
+            </div>
+          </div>
+          {/* Virtual Treatments */}
+          <div className="flex items-start">
+            <div className="mr-4 mt-1 flex h-10 w-10 items-center justify-center rounded-full bg-green-100 text-green-700">
+              <Video className="h-5 w-5" />
+            </div>
+            <div>
+              <h4 className="text-green-800 font-semibold text-base">Holistic</h4>
+              <p className="text-gray-600 text-sm">Wellness through emotinal & physical improvement. </p>
             </div>
           </div>
         </div>

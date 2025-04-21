@@ -10,6 +10,8 @@ import mainlogo from '@/components/images/logos/mainlogo.png'
 
 const navLinks = [
   { name: "Home", href: "/" },
+  { name: "Treatments", href: "/treatments" },
+  { name: "Specializations", href: "/treatment-systems" },
   { name: "About Us", href: "/about" },
   { name: "Contact", href: "/contact" },
 ]
@@ -26,16 +28,20 @@ export default function Navbar() {
           </div>
         </Link>
 
-        <nav className="hidden md:flex md:gap-6 lg:gap-10">
+        <nav className="hidden md:flex flex-col md:gap-6 lg:gap-1 items-center">
+          <div className="hidden md:flex items-center gap-6">
+
           {navLinks.map((link) => (
             <Link
-              key={link.name}
-              href={link.href}
-              className="text-lg font-medium text-green-800 transition-colors hover:text-green-600"
+            key={link.name}
+            href={link.href}
+            className="text-lg font-medium text-green-800 transition-colors hover:text-green-600"
             >
               {link.name}
             </Link>
           ))}
+          </div>
+          <i className="text-green-800 text-sm translate-y-2 opacity-70 ">"Digital Care, Personalized Healing"</i>
         </nav>
 
         <div className="hidden md:flex md:items-center md:gap-4">
