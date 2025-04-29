@@ -27,6 +27,7 @@ import ibs from "@/components/images/diseas/ibs & piles.JPG"
 import jointpain from "@/components/images/diseas/jointpain.JPG"
 import kidneydisorder from "@/components/images/diseas/kidney disorder.JPG"
 import skin from "@/components/images/diseas/skin disorders.JPG"
+import FAQComponent from "@/components/faqs"
 
 
 export default function Home() {
@@ -244,11 +245,12 @@ export default function Home() {
             
           </div>
 
-          <div className="mt-10 text-center">
-            
-          </div>
         </div>
       </section>
+          <div className="mt-10 text-center">
+            <FAQComponent />
+            
+          </div>
     </div>
   )
 }

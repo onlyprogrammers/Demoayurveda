@@ -28,15 +28,26 @@ export default function AboutPage() {
           <Image src="/about-image.jpg" alt="Dayush Clinics Center" fill className="object-cover" />
         </div>
         <div>
-          <h2 className="text-2xl font-bold text-green-800">Our Journey</h2>
+          <h2 className="text-2xl font-bold text-green-800">Our Story</h2>
           <p className="mt-4 text-gray-600">
-            Dayush Clinics began with a mission to make authentic Ayurvedic care accessible to everyone. Over the past 30 years, we've supported over 20 lakh patients in more than 35 countries with our natural and time-tested methods.
+          At Dayush Clinics, we are inspired by the timeless principles of traditional medicine and the need for accessible, convenient healthcare in today’s digital age. Our platform brings together the best of both worlds—offering direct online video consultations with experienced doctors and practitioners in Ayurveda, Siddha, Naturopathy, Unani, Homeopathy, and Yoga.
+
           </p>
           <p className="mt-4 text-gray-600">
-            Our approach blends traditional Ayurvedic knowledge with modern practices to create effective treatment solutions. We focus on identifying the root cause rather than merely treating symptoms.
+          We understand that wellness is personal and rooted in trust. That’s why every practitioner on Dayush Clinics has a minimum of 8 years of clinical experience, ensuring you receive expert guidance and care tailored to your needs. Whether you're managing a chronic condition, seeking natural remedies, or simply improving your overall wellbeing, our specialists are here to support you.
+
           </p>
           <p className="mt-4 text-gray-600">
-            Believing in nature’s wisdom, we craft personalized treatments that stimulate the body's natural healing abilities and promote lasting wellbeing.
+          We understand that wellness is personal and rooted in trust. That’s why every practitioner on Dayush Clinics has a minimum of 8 years of clinical experience, ensuring you receive expert guidance and care tailored to your needs. Whether you're managing a chronic condition, seeking natural remedies, or simply improving your overall wellbeing, our specialists are here to support you.
+
+          </p>
+          <p  className="mt-4 text-gray-600">
+          We understand that wellness is personal and rooted in trust. That’s why every practitioner on Dayush Clinics has a minimum of 8 years of clinical experience, ensuring you receive expert guidance and care tailored to your needs. Whether you're managing a chronic condition, seeking natural remedies, or simply improving your overall wellbeing, our specialists are here to support you.
+
+          </p>
+          <p  className="mt-4 text-gray-600">
+          We understand that wellness is personal and rooted in trust. That’s why every practitioner on Dayush Clinics has a minimum of 8 years of clinical experience, ensuring you receive expert guidance and care tailored to your needs. Whether you're managing a chronic condition, seeking natural remedies, or simply improving your overall wellbeing, our specialists are here to support you.
+
           </p>
         </div>
       </div>

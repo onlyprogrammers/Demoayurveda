@@ -92,7 +92,7 @@ export default function TreatmentSystemsPage() {
     {
       title: "Naturopathy",
       description:
-        "Naturopathy is a form of alternative medicine that employs an array of pseudoscientific practices branded as 'natural,' 'non-invasive,' and promoting 'self-healing.'",
+        "Naturopathy is a system of medicine that focuses on natural remedies and the body’s ability to heal itself. It combines traditional healing methods with modern science. Naturopaths often use techniques like herbal medicine, nutrition, acupuncture, hydrotherapy, massage, and lifestyle counseling.",
       icon: "/icons/naturopathy.svg",
       features: [
         "Emphasizes the healing power of nature",

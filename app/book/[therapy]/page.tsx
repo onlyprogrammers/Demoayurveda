@@ -12,13 +12,20 @@ import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
 import { useParams } from "next/navigation"
 import { useRouter } from "next/router"
+import Link from "next/link"
 
 // Types
-type Doctor = {
+ export type Doctor = {
   id: number
   name: string
   specialty: string
   experience: number
+  consultationFee: string
+  languages: string[]
+  contactEmail: string
+  isVerified: boolean
+  consultationMode: string[]
+  username: string
   rating: number
   patients: number
   location: string
@@ -58,6 +65,7 @@ export default function TherapyBookingPage({ params }: PageProps) {
     {
       id: 1,
       name: "Dr. Ayush Sharma",
+      username: "drayushsharma3841",
       specialty: "Ayurvedic Practitioner",
       experience: 12,
       rating: 4.8,
@@ -66,10 +74,16 @@ export default function TherapyBookingPage({ params }: PageProps) {
       image: "/placeholder.svg?height=300&width=300",
       therapyTypes: ["ayurveda"],
       availability: "Available Today",
+      consultationFee: "₹500",
+      languages: ["Hindi", "English"],
+      contactEmail: "ayush.sharma@dayush.com",
+      isVerified: true,
+      consultationMode: ["Video Call", "Chat"]
     },
     {
       id: 2,
       name: "Dr. Fatima Khan",
+      username: "drfatimakhan6719",
       specialty: "Unani Medicine Expert",
       experience: 8,
       rating: 4.7,
@@ -78,10 +92,16 @@ export default function TherapyBookingPage({ params }: PageProps) {
       image: "/placeholder.svg?height=300&width=300",
       therapyTypes: ["unani"],
       availability: "Available Tomorrow",
+      consultationFee: "₹450",
+      languages: ["Urdu", "Hindi", "English"],
+      contactEmail: "fatima.khan@dayush.com",
+      isVerified: true,
+      consultationMode: ["Video Call"]
     },
     {
       id: 3,
       name: "Dr. Rajesh Gupta",
+      username: "drrajeshgupta2830",
       specialty: "Homeopathic Doctor",
       experience: 15,
       rating: 4.9,
@@ -90,10 +110,16 @@ export default function TherapyBookingPage({ params }: PageProps) {
       image: "/placeholder.svg?height=300&width=300",
       therapyTypes: ["homeo"],
       availability: "Available Today",
+      consultationFee: "₹550",
+      languages: ["English", "Kannada", "Hindi"],
+      contactEmail: "rajesh.gupta@dayush.com",
+      isVerified: true,
+      consultationMode: ["Video Call", "Audio Call"]
     },
     {
       id: 4,
       name: "Yogacharya Sunita Patel",
+      username: "sunita.patel9734",
       specialty: "Yoga Therapist",
       experience: 10,
       rating: 4.6,
@@ -102,10 +128,16 @@ export default function TherapyBookingPage({ params }: PageProps) {
       image: "/placeholder.svg?height=300&width=300",
       therapyTypes: ["yoga"],
       availability: "Available Today",
+      consultationFee: "₹400",
+      languages: ["Marathi", "English", "Hindi"],
+      contactEmail: "sunita.patel@dayush.com",
+      isVerified: false,
+      consultationMode: ["Video Call"]
     },
     {
       id: 5,
       name: "Dr. Vikram Singh",
+      username: "drvikramsingh8255",
       specialty: "Ayurvedic Surgeon",
       experience: 14,
       rating: 4.7,
@@ -114,10 +146,16 @@ export default function TherapyBookingPage({ params }: PageProps) {
       image: "/placeholder.svg?height=300&width=300",
       therapyTypes: ["ayurveda"],
       availability: "Available in 2 days",
+      consultationFee: "₹600",
+      languages: ["Hindi", "English", "Rajasthani"],
+      contactEmail: "vikram.singh@dayush.com",
+      isVerified: true,
+      consultationMode: ["Video Call", "Audio Call"]
     },
     {
       id: 6,
       name: "Dr. Meera Reddy",
+      username: "drmeerareddy6098",
       specialty: "Homeopathic Consultant",
       experience: 9,
       rating: 4.5,
@@ -126,9 +164,14 @@ export default function TherapyBookingPage({ params }: PageProps) {
       image: "/placeholder.svg?height=300&width=300",
       therapyTypes: ["homeo"],
       availability: "Available Today",
-    },
-  ]
-
+      consultationFee: "₹450",
+      languages: ["Tamil", "English", "Hindi"],
+      contactEmail: "meera.reddy@dayush.com",
+      isVerified: true,
+      consultationMode: ["Video Call", "Chat"]
+    }
+  ];
+  
   // Mock data for treatments
   const treatments: Treatment[] = [
     {
@@ -218,6 +261,7 @@ export default function TherapyBookingPage({ params }: PageProps) {
             </div>
           </div>
         </Tabs>
+        
 
         {/* Doctors Section */}
         <section className="mb-12">
@@ -272,7 +316,10 @@ export default function TherapyBookingPage({ params }: PageProps) {
                   </CardContent>
                   <CardFooter className="border-t pt-4 flex justify-between">
                     <Button variant="outline" className="w-[48%]">
-                      View Profile
+                      <Link href={`/profile/${doctor.username}`} className="flex items-center gap-2">
+                        <Users className="h-4 w-4" />
+                        View Profile
+                      </Link>
                     </Button>
                     <Button className="w-[48%]">Book Now</Button>
                   </CardFooter>

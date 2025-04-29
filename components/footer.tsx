@@ -38,6 +38,11 @@ export default function Footer() {
                   Contact Us
                 </Link>
               </li>
+              <li>
+                <Link href="/faqs" className="hover:text-white">
+                  FAQs
+                </Link>
+              </li>
             </ul>
           </div>
 

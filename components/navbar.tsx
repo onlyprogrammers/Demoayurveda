@@ -41,7 +41,7 @@ export default function Navbar() {
             </Link>
           ))}
           </div>
-          <i className="text-green-800 text-sm translate-y-2 opacity-70 ">"Digital Care, Personalized Healing"</i>
+          <i className="text-green-800 text-sm translate-y-1 opacity-70 ">"Digital Care, Personalized Healing"</i>
         </nav>
 
         <div className="hidden md:flex md:items-center md:gap-4">
