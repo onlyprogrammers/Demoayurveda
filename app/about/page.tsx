@@ -16,11 +16,9 @@ export default function AboutPage() {
     <div className="container mx-auto px-4 py-12 md:px-6 md:py-16">
       <div className="mb-10 text-center">
         <h1 className="text-3xl font-bold tracking-tight text-green-800 sm:text-4xl md:text-5xl">
-          About Dayush Clinics
+          Dayush Clinics
         </h1>
-        <p className="mt-4 text-lg text-gray-600">
-          Welcome to Dayush Clinics, your trusted partner in Ayurvedic wellness. We are committed to offering holistic healing experiences that restore balance and enhance your overall health.
-        </p>
+        
       </div>
 
       <div className="grid gap-8 md:grid-cols-2 md:gap-12">
@@ -38,16 +36,13 @@ export default function AboutPage() {
 
           </p>
           <p className="mt-4 text-gray-600">
-          We understand that wellness is personal and rooted in trust. That’s why every practitioner on Dayush Clinics has a minimum of 8 years of clinical experience, ensuring you receive expert guidance and care tailored to your needs. Whether you're managing a chronic condition, seeking natural remedies, or simply improving your overall wellbeing, our specialists are here to support you.
-
+          With direct video consultations, there’s no need to travel or wait in crowded clinics. You can connect with a qualified doctor instantly or schedule an appointment at your convenience. Each session is designed to feel just like an in-person visit—with the added comfort of being at home.      
           </p>
           <p  className="mt-4 text-gray-600">
-          We understand that wellness is personal and rooted in trust. That’s why every practitioner on Dayush Clinics has a minimum of 8 years of clinical experience, ensuring you receive expert guidance and care tailored to your needs. Whether you're managing a chronic condition, seeking natural remedies, or simply improving your overall wellbeing, our specialists are here to support you.
-
+          To make holistic healthcare truly accessible, our consultations are offered at near-free cost, because we believe quality care shouldn’t be a luxury. After your consultation, you'll receive a digital prescription that’s instantly available for download, making it easy to follow your treatment plan or order medications.        
           </p>
           <p  className="mt-4 text-gray-600">
-          We understand that wellness is personal and rooted in trust. That’s why every practitioner on Dayush Clinics has a minimum of 8 years of clinical experience, ensuring you receive expert guidance and care tailored to your needs. Whether you're managing a chronic condition, seeking natural remedies, or simply improving your overall wellbeing, our specialists are here to support you.
-
+          Dayush Clinics is more than just a telemedicine app—it’s your trusted partner for natural, personalized, and authentic healing.
           </p>
         </div>
       </div>
