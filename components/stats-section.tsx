@@ -33,30 +33,32 @@ export default function WhyChooseUsSection() {
         {/* Features Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           <Feature
+            icon={<Globe className="h-6 w-6" />}
+            title="Your Wellness, Anytime & Anywhere"
+            description="Access care from the comfort of your home, 24/7."
+          />
+          <Feature
             icon={<Smartphone className="h-6 w-6" />}
             title="Easy Appointments"
             description="Book or reschedule consultations at your convenience."
           />
-          <Feature
-            icon={<Download className="h-6 w-6" />}
-            title="Instant Reports"
-            description="Get digital prescriptions and health records instantly."
-          />
+         
+         <Feature
+           icon={<HeartPulse className="h-6 w-6" />}
+           title="Personalized Care"
+           description="Health plans tailored to your body, lifestyle, and goals."
+         />
           <Feature
             icon={<Stethoscope className="h-6 w-6" />}
             title="Expert Doctors"
             description="Consult with experienced and certified professionals."
           />
-          <Feature
-            icon={<HeartPulse className="h-6 w-6" />}
-            title="Personalized Care"
-            description="Health plans tailored to your body, lifestyle, and goals."
+           <Feature
+            icon={<Download className="h-6 w-6" />}
+            title="Instant Reports"
+            description="Get digital prescriptions and health records instantly."
           />
-          <Feature
-            icon={<Globe className="h-6 w-6" />}
-            title="Your Wellness, Anytime & Anywhere"
-            description="Access care from the comfort of your home, 24/7."
-          />
+          
           <Feature
             icon={<Apple className="h-6 w-6" />}
             title="iOS & Android Support"

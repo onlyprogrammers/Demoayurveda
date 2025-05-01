@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
-const faqs = [
+export const faqs = [
   {
     question: "What is Dayush Clinics?",
     answer:

@@ -16,7 +16,7 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import treatment1 from "@/components/images/treatment1.png"
 import { cn } from "@/lib/utils"
 import ModernSlider from "@/components/slider/modern-slider"
-import { Clock, PhoneCall, Video, HeartPulse } from "lucide-react"
+import { Clock, PhoneCall, Video, HeartPulse, MessageCircle, Smile } from "lucide-react"
 
 // images for diseases
 import asthma from "@/components/images/diseas/asthma.JPG"
@@ -98,114 +98,115 @@ export default function Home() {
 
       {/* About Section */}
 
-<section className="py-12 md:py-16" ref={aboutSection.ref as React.RefObject<HTMLElement>}>
-  <div
-    className={cn(
-      "container px-4 md:px-6 transition-all duration-700 ease-out",
-      aboutSection.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10",
-    )}
-  >
-    <div className="grid gap-8 md:grid-cols-2 md:gap-12">
-      <div>
-        <h2 className="text-3xl font-bold tracking-tight text-green-800 sm:text-4xl">
-          Your Wellness, Anytime & Anywhere
-        </h2>
-        <p className="mt-4 text-lg text-gray-600">
-          Get connected with certified doctors and personalized care—accessible from the comfort of your home.
-        </p>
+      <section className="py-12 md:py-16" ref={aboutSection.ref as React.RefObject<HTMLElement>}>
+        <div
+          className={cn(
+            "container px-4 md:px-6 transition-all duration-700 ease-out",
+            aboutSection.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10",
+          )}
+        >
+          <div className="grid gap-8 md:grid-cols-2 md:gap-12">
+            <div>
+              <h2 className="text-3xl font-bold tracking-tight text-green-800 sm:text-4xl">
+                Your Wellness, Anytime & Anywhere
+              </h2>
+              <p className="mt-4 text-lg text-gray-600">
+                Get connected with certified doctors and personalized care—accessible from the comfort of your home.
+              </p>
 
-        <div className="mt-6 space-y-6">
-          {/* Availability */}
-          <div className="flex items-start">
-            <div className="mr-4 mt-1 flex h-10 w-10 items-center justify-center rounded-full bg-green-100 text-green-700">
-              <Clock className="h-5 w-5" />
-            </div>
-            <div>
-              <h4 className="text-green-800 font-semibold text-base">Digital Availability</h4>
-              <p className="text-gray-600 text-sm">Doctors available 24×7 for consultations and emergencies</p>
-            </div>
-          </div>
+              <div className="mt-6 space-y-6">
+                {/* Availability */}
+                <div className="flex items-start">
+                  <div className="mr-4 mt-1 flex h-10 w-10 items-center justify-center rounded-full bg-green-100 text-green-700">
+                    <Clock className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h4 className="text-green-800 font-semibold text-base">Digital Availability</h4>
+                    <p className="text-gray-600 text-sm">Doctors available 24×7 for consultations and emergencies</p>
+                  </div>
+                </div>
 
-          {/* Accessibility */}
-          <div className="flex items-start">
-            <div className="mr-4 mt-1 flex h-10 w-10 items-center justify-center rounded-full bg-green-100 text-green-700">
-              <PhoneCall className="h-5 w-5" />
-            </div>
-            <div>
-              <h4 className="text-green-800 font-semibold text-base">Anytime Accessibility</h4>
-              <p className="text-gray-600 text-sm">Connect via chat, voice, or video calls seamlessly</p>
-            </div>
-          </div>
+                {/* Accessibility */}
+                <div className="flex items-start">
+                  <div className="mr-4 mt-1 flex h-10 w-10 items-center justify-center rounded-full bg-green-100 text-green-700">
+                    <PhoneCall className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h4 className="text-green-800 font-semibold text-base">Anytime Accessibility</h4>
+                    <p className="text-gray-600 text-sm">Connect via chat, voice, or video calls seamlessly</p>
+                  </div>
+                </div>
 
-          {/* Personalized Plans */}
-          <div className="flex items-start">
-            <div className="mr-4 mt-1 flex h-10 w-10 items-center justify-center rounded-full bg-green-100 text-green-700">
-              <HeartPulse className="h-5 w-5" />
-            </div>
-            <div>
-              <h4 className="text-green-800 font-semibold text-base">Your Care Plans</h4>
-              <p className="text-gray-600 text-sm">Customized health plans combining modern and traditional care</p>
-            </div>
-          </div>
+                {/* Personalized Plans */}
+                <div className="flex items-start">
+                  <div className="mr-4 mt-1 flex h-10 w-10 items-center justify-center rounded-full bg-green-100 text-green-700">
+                    <HeartPulse className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h4 className="text-green-800 font-semibold text-base">Your Care Plans</h4>
+                    <p className="text-gray-600 text-sm">Customized health plans combining modern and traditional care</p>
+                  </div>
+                </div>
 
-          {/* Virtual Treatments */}
-          <div className="flex items-start">
-            <div className="mr-4 mt-1 flex h-10 w-10 items-center justify-center rounded-full bg-green-100 text-green-700">
-              <Video className="h-5 w-5" />
+                {/* Virtual Treatments */}
+                <div className="flex items-start">
+                  <div className="mr-4 mt-1 flex h-10 w-10 items-center justify-center rounded-full bg-green-100 text-green-700">
+                    <Video className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h4 className="text-green-800 font-semibold text-base">Ultra Care & Comfort</h4>
+                    <p className="text-gray-600 text-sm">Receive expert care and guidance without stepping out through virtual consultations</p>
+                  </div>
+                </div>
+                {/* Virtual Treatments */}
+                <div className="flex items-start">
+                  <div className="mr-4 mt-1 flex h-10 w-10 items-center justify-center rounded-full bg-green-100 text-green-700">
+                    <MessageCircle className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h4 className="text-green-800 font-semibold text-base">sustained support</h4>
+                    <p className="text-gray-600 text-sm">Continuous support and anytime/anywhere prescription healing download and call us </p>
+                  </div>
+                </div>
+                {/* Virtual Treatments */}
+                <div className="flex items-start">
+                  <div className="mr-4 mt-1 flex h-10 w-10 items-center justify-center rounded-full bg-green-100 text-green-700">
+                    <Smile className="h-5 w-5" />
+
+                  </div>
+                  <div>
+                    <h4 className="text-green-800 font-semibold text-base">Holistic healing</h4>
+                    <p className="text-gray-600 text-sm">Wellness through emotinal & physical improvement. </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-8">
+                <Button asChild className="bg-green-700 text-white hover:bg-green-800">
+                  <Link href="/about">Meet Our Medical Team</Link>
+                </Button>
+              </div>
             </div>
-            <div>
-              <h4 className="text-green-800 font-semibold text-base">Ultra Care & Comfort</h4>
-              <p className="text-gray-600 text-sm">Receive expert care and guidance without stepping out through virtual consultations</p>
-            </div>
-          </div>
-          {/* Virtual Treatments */}
-          <div className="flex items-start">
-            <div className="mr-4 mt-1 flex h-10 w-10 items-center justify-center rounded-full bg-green-100 text-green-700">
-              <Video className="h-5 w-5" />
-            </div>
-            <div>
-              <h4 className="text-green-800 font-semibold text-base">sustained support</h4>
-              <p className="text-gray-600 text-sm">Continuous support and anytime/anywhere prescription healing download and call us </p>
-            </div>
-          </div>
-          {/* Virtual Treatments */}
-          <div className="flex items-start">
-            <div className="mr-4 mt-1 flex h-10 w-10 items-center justify-center rounded-full bg-green-100 text-green-700">
-              <Video className="h-5 w-5" />
-            </div>
-            <div>
-              <h4 className="text-green-800 font-semibold text-base">Holistic</h4>
-              <p className="text-gray-600 text-sm">Wellness through emotinal & physical improvement. </p>
+
+            <div className="relative h-[400px] overflow-hidden rounded-lg justify-center bg-green-100">
+              <Image
+                src={treatment1}
+                alt="Modern Holistic Healthcare"
+                fill
+                className="object w-max"
+                style={{ width: "100%" }}
+              />
             </div>
           </div>
         </div>
-
-        <div className="mt-8">
-          <Button asChild className="bg-green-700 text-white hover:bg-green-800">
-            <Link href="/about">Meet Our Medical Team</Link>
-          </Button>
-        </div>
-      </div>
-
-      <div className="relative h-[400px] overflow-hidden rounded-lg justify-center bg-green-100">
-        <Image
-          src={treatment1}
-          alt="Modern Holistic Healthcare"
-          fill
-          className="object w-max"
-          style={{ width: "100%" }}
-        />
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
 
       {/* Doctors Section */}
-      
+
 
       {/* Testimonials Section */}
-      <section className="bg-green-50 py-12 md:py-16" ref={testimonialsSection.ref as React.RefObject<HTMLElement>} style={{display:'none'}}>
+      <section className="bg-green-50 py-12 md:py-16" ref={testimonialsSection.ref as React.RefObject<HTMLElement>} style={{ display: 'none' }}>
         <div
           className={cn(
             "container px-4 md:px-6 transition-all duration-700 ease-out",
@@ -242,15 +243,16 @@ export default function Home() {
               rating={5}
               text="I had been suffering from chronic back pain for years. After just a few sessions of Ayurvedic treatment, I experienced significant relief. The doctors are knowledgeable and the staff is very caring."
             />
-            
+
           </div>
 
         </div>
       </section>
-          <div className="mt-10 text-center">
-            <FAQComponent />
-            
-          </div>
+      <div className="mt-10 text-center m-6 rounded overflow-hidden" style={{ maxHeight: "380px"}}>
+        <FAQComponent />
+
+      </div>
+      <Link href="/faqs" className="border flex p-3 m-6 justify-center border-green-300 rounded-2xl p-4 shadow-md bg-green-50">More →</Link>
     </div>
   )
 }
