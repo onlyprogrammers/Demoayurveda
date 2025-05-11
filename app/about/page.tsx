@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import aboutimage from "@/components/images/aboutimage.png"
 
 import {
   Calendar,
@@ -23,7 +24,7 @@ export default function AboutPage() {
 
       <div className="grid gap-8 md:grid-cols-2 md:gap-12">
         <div className="relative h-[400px] overflow-hidden rounded-lg">
-          <Image src="/about-image.jpg" alt="Dayush Clinics Center" fill className="object-cover" />
+          <Image src={aboutimage} alt="Dayush Clinics Center" fill className="object-cover" />
         </div>
         <div>
           <h2 className="text-2xl font-bold text-green-800">Our Story</h2>

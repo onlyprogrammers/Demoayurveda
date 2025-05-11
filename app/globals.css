@@ -113,3 +113,9 @@ html {
     height: auto !important; /* Adjust slider height for mobile */
   }
 }
+
+.boldfirstletter div div div h4::first-letter {
+  font-size: 2em;
+  font-weight: bold;
+  color: var(--foreground);
+}

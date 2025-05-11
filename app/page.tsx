@@ -28,6 +28,7 @@ import jointpain from "@/components/images/diseas/jointpain.JPG"
 import kidneydisorder from "@/components/images/diseas/kidney disorder.JPG"
 import skin from "@/components/images/diseas/skin disorders.JPG"
 import FAQComponent from "@/components/faqs"
+import DayushIntro from "@/components/otherinfo"
 
 
 export default function Home() {
@@ -41,7 +42,9 @@ export default function Home() {
   return (
     <div>
       <ModernSlider />
-
+      <section className="py-12 px-12 md:py-16">
+        <DayushIntro />
+      </section>
       {/* Treatment Types Section */}
       <section ref={treatmentTypesSection.ref as React.RefObject<HTMLElement>}>
         <div
@@ -55,44 +58,7 @@ export default function Home() {
       </section>
 
       {/* Treatments Section */}
-      <section className="py-12 md:py-16" ref={treatmentsSection.ref as React.RefObject<HTMLElement>}>
-        <div
-          className={cn(
-            "container px-4 md:px-6 transition-all duration-700 ease-out",
-            treatmentsSection.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10",
-          )}
-        >
-          <div className="mb-10 text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-green-800 sm:text-4xl">Popular Treatments</h2>
-            <p className="mt-4 text-lg text-gray-600">
-              Discover our range of authentic treatments for various health conditions
-            </p>
-          </div>
 
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 lg:grid-cols-6">
-            <TreatmentCard title="" icon={asthma} href="asthma" />
-            <TreatmentCard
-              title=""
-              icon={diabetes}
-              href="diabetes"
-            />
-            <TreatmentCard title="" icon={digestivedisorder} href="digestivedisorder" />
-            <TreatmentCard title="" icon={headache} href="headache" />
-            <TreatmentCard title="" icon={ibs} href="ibs" />
-            <TreatmentCard
-              title=""
-              icon={jointpain}
-              href="other-illnesses-which-cured-by-different-therapies"
-            />
-          </div>
-
-          <div className="mt-10 text-center">
-            <Button asChild className="bg-green-700 text-white hover:bg-green-800">
-              <Link href="/treatments">View All Treatments</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
 
       <StatsSection />
 
@@ -106,7 +72,7 @@ export default function Home() {
           )}
         >
           <div className="grid gap-8 md:grid-cols-2 md:gap-12">
-            <div>
+            <div className="boldfirstletter">
               <h2 className="text-3xl font-bold tracking-tight text-green-800 sm:text-4xl">
                 Your Wellness, Anytime & Anywhere
               </h2>
@@ -118,7 +84,7 @@ export default function Home() {
                 {/* Availability */}
                 <div className="flex items-start">
                   <div className="mr-4 mt-1 flex h-10 w-10 items-center justify-center rounded-full bg-green-100 text-green-700">
-                    <Clock className="h-5 w-5" />
+                    <Video className="h-5 w-5" />
                   </div>
                   <div>
                     <h4 className="text-green-800 font-semibold text-base">Digital Availability</h4>
@@ -129,7 +95,7 @@ export default function Home() {
                 {/* Accessibility */}
                 <div className="flex items-start">
                   <div className="mr-4 mt-1 flex h-10 w-10 items-center justify-center rounded-full bg-green-100 text-green-700">
-                    <PhoneCall className="h-5 w-5" />
+                    <Clock className="h-5 w-5" />
                   </div>
                   <div>
                     <h4 className="text-green-800 font-semibold text-base">Anytime Accessibility</h4>
@@ -151,7 +117,7 @@ export default function Home() {
                 {/* Virtual Treatments */}
                 <div className="flex items-start">
                   <div className="mr-4 mt-1 flex h-10 w-10 items-center justify-center rounded-full bg-green-100 text-green-700">
-                    <Video className="h-5 w-5" />
+                    <p className="h-5 w-5">👩‍👧‍👧</p>
                   </div>
                   <div>
                     <h4 className="text-green-800 font-semibold text-base">Ultra Care & Comfort</h4>
@@ -161,10 +127,10 @@ export default function Home() {
                 {/* Virtual Treatments */}
                 <div className="flex items-start">
                   <div className="mr-4 mt-1 flex h-10 w-10 items-center justify-center rounded-full bg-green-100 text-green-700">
-                    <MessageCircle className="h-5 w-5" />
+                    <PhoneCall className="h-5 w-5" />
                   </div>
                   <div>
-                    <h4 className="text-green-800 font-semibold text-base">sustained support</h4>
+                    <h4 className="text-green-800 font-semibold text-base">Sustained support</h4>
                     <p className="text-gray-600 text-sm">Continuous support and anytime/anywhere prescription healing download and call us </p>
                   </div>
                 </div>
@@ -248,11 +214,23 @@ export default function Home() {
 
         </div>
       </section>
-      <div className="mt-10 text-center m-6 rounded overflow-hidden" style={{ maxHeight: "380px"}}>
+      <div className="mt-10 text-left m-6 rounded overflow-hidden" style={{ maxHeight: "380px" }}>
         <FAQComponent />
 
       </div>
-      <Link href="/faqs" className="border flex p-3 m-6 justify-center border-green-300 rounded-2xl p-4 shadow-md bg-green-50">More →</Link>
+      <div className="hidden md:flex md:items-left md:gap-4 w-full justify-left px-4 m-8">
+        <Button
+          asChild
+          variant="outline"
+          className="border-green-700 text-green-800 hover:bg-green-50 hover:text-green-900 bg-green-900 text-white hover:bg-green-800"
+        >
+          <Link href="/faqs"> More</Link>
+        </Button>
+        <Button asChild className="bg-green-700 text-white hover:bg-green-800">
+          {/* <Link href="/book-now">Book Now</Link> */}
+        </Button>
+      </div>
+
     </div>
   )
 }

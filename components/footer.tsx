@@ -50,28 +50,33 @@ export default function Footer() {
             <h3 className="mb-4 text-lg font-semibold">Treatments</h3>
             <ul className="space-y-2 text-green-100">
               <li>
-                <Link href="/moreabout/pain-relief" className="hover:text-white">
-                  Pain Relief
+                <Link href="/book/ayurveda" className="hover:text-white">
+                  Ayurveda
                 </Link>
               </li>
               <li>
-                <Link href="/moreabout/stress-relief" className="hover:text-white">
-                  Relaxation & Stress Relief
+                <Link href="/book/homeopathy" className="hover:text-white">
+                  Homeopathy
                 </Link>
               </li>
               <li>
-                <Link href="/moreabout/panchakarma" className="hover:text-white">
-                  Panchakarma Detox
+                <Link href="/book/naturopathy" className="hover:text-white">
+                  Naturopathy
                 </Link>
               </li>
               <li>
-                <Link href="/moreabout/weight-loss" className="hover:text-white">
-                  Fat and Weight Loss
+                <Link href="/book/siddha" className="hover:text-white">
+                  Siddha Medicine
                 </Link>
               </li>
               <li>
-                <Link href="/moreabout/womens-care" className="hover:text-white">
-                  Women's Care
+                <Link href="/book/yoga" className="hover:text-white">
+                  Yoga and Meditation
+                </Link>
+              </li>
+              <li>
+                <Link href="/book/unani" className="hover:text-white">
+                  Unani Medicine
                 </Link>
               </li>
             </ul>

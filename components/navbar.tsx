@@ -7,11 +7,11 @@ import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
 import mainlogo from '@/components/images/logos/mainlogo.png'
+import doanloadapp from '@/components/images/Downloadapp.png'
 
 const navLinks = [
   { name: "Home", href: "/" },
-  { name: "Treatments", href: "/treatments" },
-  { name: "Specializations", href: "/treatment-systems" },
+  { name: "Treatments", href: "/treatment-systems" },
   { name: "About Us", href: "/about" },
   { name: "Contact", href: "/contact" },
 ]
@@ -31,30 +31,23 @@ export default function Navbar() {
         <nav className="hidden md:flex flex-col md:gap-6 lg:gap-1 items-center">
           <div className="hidden md:flex items-center gap-6">
 
-          {navLinks.map((link) => (
-            <Link
-            key={link.name}
-            href={link.href}
-            className="text-lg font-medium text-green-800 transition-colors hover:text-green-600"
-            >
-              {link.name}
-            </Link>
-          ))}
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="text-lg font-medium text-green-800 transition-colors hover:text-green-600"
+              >
+                {link.name}
+              </Link>
+            ))}
           </div>
-          <i className="text-green-800 text-sm translate-y-1 opacity-70 ">"Digital Care, Personalized Healing"</i>
+          <i className="text-green-800 text-sm translate-y-1 opacity-70 ">" Trusted Traditional Care - Delivered Digitally"
+          </i>
         </nav>
 
         <div className="hidden md:flex md:items-center md:gap-4">
-          <Button
-            asChild
-            variant="outline"
-            className="border-green-700 text-green-800 hover:bg-green-50 hover:text-green-900"
-          >
-            <Link href="/book/all">Book Consultation</Link>
-          </Button>
-          <Button asChild className="bg-green-700 text-white hover:bg-green-800">
-            {/* <Link href="/book-now">Book Now</Link> */}
-          </Button>
+          <Image src={doanloadapp} alt="Logo" height={100} className="h-25 mainlogo" />
+          
         </div>
 
         <button
@@ -92,7 +85,7 @@ export default function Navbar() {
             >
               <Link href="/book/all">Book Consultation</Link>
             </Button>
-            
+
           </div>
         </nav>
       </div>
