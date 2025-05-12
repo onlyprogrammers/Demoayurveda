@@ -42,7 +42,7 @@ export default function Home() {
   return (
     <div>
       <ModernSlider />
-      <section className="py-12 px-12 md:py-16">
+      <section className="py-7 px-7 md:py-16 md:px-2">
         <DayushIntro />
       </section>
       {/* Treatment Types Section */}
@@ -117,7 +117,7 @@ export default function Home() {
                 {/* Virtual Treatments */}
                 <div className="flex items-start">
                   <div className="mr-4 mt-1 flex h-10 w-10 items-center justify-center rounded-full bg-green-100 text-green-700">
-                    <p className="h-5 w-5">👩‍👧‍👧</p>
+                    <p className="h-5 w-6">👩‍👧‍👧</p>
                   </div>
                   <div>
                     <h4 className="text-green-800 font-semibold text-base">Ultra Care & Comfort</h4>
@@ -218,7 +218,7 @@ export default function Home() {
         <FAQComponent />
 
       </div>
-      <div className="hidden md:flex md:items-left md:gap-4 w-full justify-left px-4 m-8">
+      <div className=" md:flex md:items-right items-right md:gap-4 w-full justify-right px-4 m-8">
         <Button
           asChild
           variant="outline"
@@ -226,9 +226,7 @@ export default function Home() {
         >
           <Link href="/faqs"> More</Link>
         </Button>
-        <Button asChild className="bg-green-700 text-white hover:bg-green-800">
-          {/* <Link href="/book-now">Book Now</Link> */}
-        </Button>
+
       </div>
 
     </div>
