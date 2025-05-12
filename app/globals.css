@@ -61,6 +61,10 @@
 /* Add smooth scrolling */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+body{
+  overflow-x: hidden;
 }
 
 /* Add custom animations */
