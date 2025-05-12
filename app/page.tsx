@@ -42,7 +42,7 @@ export default function Home() {
   return (
     <div>
       <ModernSlider />
-      <section className="py-12 px-12 md:py-16 md:px-2">
+      <section className="py-6 px-6 md:py-16 md:px-2">
         <DayushIntro />
       </section>
       {/* Treatment Types Section */}

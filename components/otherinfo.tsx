@@ -3,7 +3,7 @@ import React from "react";
 const DayushIntro: React.FC = () => {
   return (
     <section className="bg-green-50 text-green-900 px-6 py-12 rounded-2xl mx-auto py-12 md:py-16">
-      <h1 className="text-3xl md:text-4xl font-bold text-green-800 mb-6 text-center">
+      <h1 className="text-2xl md:text-2xl font-bold text-green-800 mb-6 text-center">
       We offer a comprehensive range of traditional Indian medical systems to provide holistic healthcare solutions tailored to your needs
       </h1>
 
