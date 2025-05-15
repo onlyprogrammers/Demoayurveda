@@ -23,11 +23,11 @@ export default function AboutPage() {
       </div>
 
       <div className="grid gap-8 md:grid-cols-2 md:gap-12">
-        <div className="relative h-[400px] overflow-hidden rounded-lg">
-          <Image src={aboutimage} alt="Dayush Clinics Center" fill className="object-cover" />
+        <div className="relative h-400 overflow-hidden rounded-lg">
+          <Image src={aboutimage} alt="Dayush Clinics Center" fill className=" h-300" />
         </div>
         <div>
-          <h2 className="text-2xl font-bold text-green-800">Our Story</h2>
+          <h2 className="text-2xl font-bold text-green-800">" Trusted Traditional Care - Delivered Digitally"</h2>
           <p className="mt-4 text-gray-600">
           At Dayush Clinics, we are inspired by the timeless principles of traditional medicine and the need for accessible, convenient healthcare in today’s digital age. Our platform brings together the best of both worlds—offering direct online video consultations with experienced doctors and practitioners in Ayurveda, Siddha, Naturopathy, Unani, Homeopathy, and Yoga.
 

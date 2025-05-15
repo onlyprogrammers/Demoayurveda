@@ -27,6 +27,7 @@ import ibs from "@/components/images/diseas/ibs & piles.JPG"
 import jointpain from "@/components/images/diseas/jointpain.JPG"
 import kidneydisorder from "@/components/images/diseas/kidney disorder.JPG"
 import skin from "@/components/images/diseas/skin disorders.JPG"
+import ultracare from "@/components/images/ultracare.png"
 import FAQComponent from "@/components/faqs"
 import DayushIntro from "@/components/otherinfo"
 
@@ -42,9 +43,7 @@ export default function Home() {
   return (
     <div>
       <ModernSlider />
-      <section className="py-6 px-6 md:py-16 md:px-2">
-        <DayushIntro />
-      </section>
+      
       {/* Treatment Types Section */}
       <section ref={treatmentTypesSection.ref as React.RefObject<HTMLElement>}>
         <div
@@ -117,7 +116,7 @@ export default function Home() {
                 {/* Virtual Treatments */}
                 <div className="flex items-start">
                   <div className="mr-4 mt-1 flex h-10 w-10 items-center justify-center rounded-full bg-green-100 text-green-700">
-                    <p className="h-5 w-5">👩‍👧‍👧</p>
+                    <Image alt="ultracare" src={ultracare} className="h-5 w-5" />
                   </div>
                   <div>
                     <h4 className="text-green-800 font-semibold text-base">Ultra Care & Comfort</h4>
