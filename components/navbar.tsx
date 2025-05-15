@@ -21,14 +21,14 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white">
-      <div className="container flex h-25 items-center justify-between px-4 md:px-6 mainnav">
+      <div className="container flex h-35 items-center justify-between px-4 md:px-6 mainnav">
         <Link href="/" className="flex items-center gap-2">
           <div className="flex items-center">
-            <Image src={mainlogo} alt="Logo" height={100} className="h-25 mainlogo" />
+            <Image src={mainlogo} alt="Logo" height={110} className="h-25 mainlogo" />
           </div>
         </Link>
 
-        <nav className="hidden md:flex flex-col md:gap-6 lg:gap-1 items-center">
+        <nav className="hidden md:flex flex-col md:gap-6 lg:gap-1 translate-y-4 items-center">
           <div className="hidden md:flex items-center gap-6">
 
             {navLinks.map((link) => (
@@ -41,12 +41,12 @@ export default function Navbar() {
               </Link>
             ))}
           </div>
-          <i className="text-green-800 text-sm translate-y-1 opacity-70 ">" Trusted Traditional Care - Delivered Digitally"
+          <i className="text-green-800 text-sm translate-y-3 ">" Trusted Traditional Care - Delivered Digitally"
           </i>
         </nav>
 
         <div className="hidden md:flex md:items-center md:gap-4">
-          <Image src={doanloadapp} alt="Logo" height={100} className="h-25 mainlogo" />
+          <Image src={doanloadapp} alt="Logo" height={120} className="h-25 mainlogo" />
           
         </div>
 
