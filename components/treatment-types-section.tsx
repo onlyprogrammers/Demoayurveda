@@ -54,7 +54,7 @@ export default function TreatmentTypesSection() {
         <div className="mb-10 text-center">
           <h2 className="text-3xl font-bold tracking-tight text-green-800 sm:text-4xl">Popular Treatments</h2>
           <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-            We offer a comprehensive range of traditional Indian medical systems to provide holistic healthcare
+            We offer digital consultancy in alternate medicine systems to provide holistic healthcare
             solutions tailored to your needs
           </p>
         </div>
