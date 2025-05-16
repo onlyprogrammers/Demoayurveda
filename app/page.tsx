@@ -17,6 +17,7 @@ import treatment1 from "@/components/images/treatment1.png"
 import { cn } from "@/lib/utils"
 import ModernSlider from "@/components/slider/modern-slider"
 import { Clock, PhoneCall, Video, HeartPulse, MessageCircle, Smile } from "lucide-react"
+import yoga from "@/components/images/logos/Yoga Therapy.PNG"
 
 // images for diseases
 import asthma from "@/components/images/diseas/asthma.JPG"
