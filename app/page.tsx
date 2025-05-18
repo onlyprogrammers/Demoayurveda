@@ -17,6 +17,7 @@ import treatment1 from "@/components/images/treatment1.png"
 import { cn } from "@/lib/utils"
 import ModernSlider from "@/components/slider/modern-slider"
 import { Clock, PhoneCall, Video, HeartPulse, MessageCircle, Smile } from "lucide-react"
+import yoga from "@/components/images/logos/Yoga Therapy.PNG"
 
 // images for diseases
 import asthma from "@/components/images/diseas/asthma.JPG"
@@ -136,7 +137,7 @@ export default function Home() {
                 {/* Virtual Treatments */}
                 <div className="flex items-start">
                   <div className="mr-4 mt-1 flex h-10 w-10 items-center justify-center rounded-full bg-green-100 text-green-700">
-                    <Smile className="h-5 w-5" />
+                    <Image src={yoga} alt="yoga" className="h-5 w-5" />
 
                   </div>
                   <div>
