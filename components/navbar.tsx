@@ -12,6 +12,7 @@ import doanloadapp from '@/components/images/Downloadapp.png'
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "Treatments", href: "/treatment-systems" },
+  { name: "Medical Team", href: "/book/all" },
   { name: "About Us", href: "/about" },
   { name: "Contact", href: "/contact" },
 ]

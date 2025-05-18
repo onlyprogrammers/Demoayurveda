@@ -9,7 +9,7 @@ export default function Footer() {
           <div>
             <h3 className="mb-4 text-lg font-semibold">Dayush Clinics</h3>
             <p className="mb-4 text-green-100 ">
-              One Stop Solution For Alternate Medicine Consultations.
+              One Stop Solution For Digital Consultations In Alternate Medicine Treatments.
             </p>
             
           </div>
@@ -66,7 +66,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/book/siddha" className="hover:text-white">
-                  Siddha Medicine
+                  Siddha 
                 </Link>
               </li>
               <li>
@@ -76,7 +76,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/book/unani" className="hover:text-white">
-                  Unani Medicine
+                  Unani 
                 </Link>
               </li>
             </ul>
@@ -89,6 +89,7 @@ export default function Footer() {
               <li className="flex items-start">
                 <Mail className="mr-2 h-5 w-5 shrink-0" />
                 <span>dayushclinics@gmail.com</span>
+                <span>support@dayushclinics.com</span>
               </li>
               
             </ul>

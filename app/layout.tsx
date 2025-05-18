@@ -9,7 +9,7 @@ import Footer from "@/components/footer"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Dayush clinics - Authentic Ayurvedic Treatment Center",
+  title: "Dayush clinics - Digital Consultations for personalized healing",
   description:
     "Experience authentic Kerala Ayurvedic treatments for pain relief, stress management, detox, weight loss, and more.",
     generator: 'v0.dev'
@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={inter.className + " bg-green-50"} >
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <div className="flex min-h-screen flex-col">
             <Navbar />

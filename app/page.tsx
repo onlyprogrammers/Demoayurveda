@@ -76,7 +76,7 @@ export default function Home() {
                 Your Wellness, Anytime & Anywhere
               </h2>
               <p className="mt-4 text-lg text-gray-600">
-                Get connected with certified doctors and personalized care—accessible from the comfort of your home.
+                Get connected with certified practitioners and personalized care—accessible from the comfort of your home.
               </p>
 
               <div className="mt-6 space-y-6">
@@ -98,7 +98,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="text-green-800 font-semibold text-base">Anytime Accessibility</h4>
-                    <p className="text-gray-600 text-sm">Connect via chat, voice, or video calls seamlessly</p>
+                    <p className="text-gray-600 text-sm">Connect via video calls seamlessly</p>
                   </div>
                 </div>
 
@@ -129,8 +129,8 @@ export default function Home() {
                     <PhoneCall className="h-5 w-5" />
                   </div>
                   <div>
-                    <h4 className="text-green-800 font-semibold text-base">Sustained support</h4>
-                    <p className="text-gray-600 text-sm">Continuous support and anytime/anywhere prescription healing download and call us </p>
+                    <h4 className="text-green-800 font-semibold text-base">Sustained Support</h4>
+                    <p className="text-gray-600 text-sm">Continuous support and anytime/anywhere prescription download facility </p>
                   </div>
                 </div>
                 {/* Virtual Treatments */}
@@ -140,7 +140,7 @@ export default function Home() {
 
                   </div>
                   <div>
-                    <h4 className="text-green-800 font-semibold text-base">Holistic healing</h4>
+                    <h4 className="text-green-800 font-semibold text-base">Holistic Healing</h4>
                     <p className="text-gray-600 text-sm">Wellness through emotinal & physical improvement. </p>
                   </div>
                 </div>

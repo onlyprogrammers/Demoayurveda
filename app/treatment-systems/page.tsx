@@ -106,7 +106,7 @@ export default function TreatmentSystemsPage() {
     {
       title: "Siddha Medicine",
       description:
-        "Siddha is one of India's oldest medical systems, originating in Tamil Nadu. It shares concepts with Ayurveda while maintaining its own unique identity and approach to healing.",
+        "Siddha is one of India's oldest medical systems, originated in Tamil Nadu. It shares concepts with Ayurveda while maintaining its own unique identity and approach to healing.",
       icon: "/icons/siddha.svg",
       features: [
         "Based on the balance of three humors: Vata, Pitta, and Kapha",
@@ -151,11 +151,10 @@ export default function TreatmentSystemsPage() {
     <div className="container mx-auto px-4 py-12 md:px-6 md:py-16">
       <div className="mb-10 text-center">
         <h1 className="text-3xl font-bold tracking-tight text-green-800 sm:text-4xl md:text-5xl">
-          Our Treatment Systems
+          Digital Treatments
         </h1>
         <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-          We offer a comprehensive range of traditional Indian medical systems to provide holistic healthcare solutions
-          tailored to your unique needs
+          We offer a comprehensive range of traditional Indian medical systems to provide holistic healthcare solutions tailored to your needs
         </p>
       </div>
 

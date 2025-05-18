@@ -49,7 +49,7 @@ function TreatmentType({ title, description, icon, href, className }: TreatmentT
 
 export default function TreatmentTypesSection() {
   return (
-    <section className="py-12 md:py-16 bg-green-50">
+    <section className="py-5 md:py-6 bg-green-100">
       <div className="container px-4 md:px-6">
         <div className="mb-10 text-center">
           <h2 className="text-3xl font-bold tracking-tight text-green-800 sm:text-4xl">Popular Treatments</h2>
@@ -80,7 +80,7 @@ export default function TreatmentTypesSection() {
           />
           <TreatmentType
             title="Siddha Medicine"
-            description="One of India's oldest medical systems originating in Tamil Nadu, using herbs, minerals, and animal products."
+            description="One of India's oldest medical systems originated in Tamil Nadu, using herbs, minerals, and animal products."
             icon={siddha}
             href="/book/siddha"
           />
