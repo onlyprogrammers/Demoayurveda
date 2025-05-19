@@ -86,9 +86,9 @@ export default function Footer() {
             <h3 className="mb-4 text-lg font-semibold">Contact Us</h3>
             <ul className="space-y-3 text-green-100">
            
-              <li className="flex items-start">
+              <li className="flex items-start col-start-1">
                 <Mail className="mr-2 h-5 w-5 shrink-0" />
-                <span>dayushclinics@gmail.com</span>
+                <span>dayushclinics@gmail.com</span><br/>
                 <span>support@dayushclinics.com</span>
               </li>
               
