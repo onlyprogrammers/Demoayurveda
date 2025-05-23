@@ -23,7 +23,7 @@ function Feature({
 
 export default function WhyChooseUsSection() {
   return (
-    <section className="bg-green-50 py-12 sm:py-16">
+    <section className="bg-green-100 py-12 sm:py-16">
       <div className="container px-4 md:px-6 text-center">
         {/* Main Heading */}
         <h2 className="text-3xl sm:text-4xl font-bold text-green-800 mb-10">

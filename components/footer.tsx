@@ -29,7 +29,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/doctors" className="hover:text-white">
-                  Our Doctors
+                  Medical Team
                 </Link>
               </li>
              
@@ -86,18 +86,20 @@ export default function Footer() {
             <h3 className="mb-4 text-lg font-semibold">Contact Us</h3>
             <ul className="space-y-3 text-green-100">
            
-              <li className=" items-start ">
                 <Mail className="mr-2 h-5 w-5 shrink-0" />
-                <span>dayushclinics@gmail.com</span>
+              <li>
                 <span>support@dayushclinics.com</span>
+
               </li>
-              
+              <li className=" items-start ">
+                <span>dayushclinics@gmail.com</span>
+              </li>
             </ul>
           </div>
         </div>
 
         <div className="mt-8 border-t border-green-800 pt-8 text-center text-sm text-green-100">
-          <p>&copy; {new Date().getFullYear()} Dayush clinics. All rights reserved.</p>
+          <p>&copy;2024 Dayush clinics. All rights reserved.</p>
         </div>
       </div>
     </footer>

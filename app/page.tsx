@@ -71,7 +71,7 @@ export default function Home() {
             aboutSection.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10",
           )}
         >
-          <div className="grid gap-8 md:grid-cols-2 md:gap-12">
+          <div className="grid gap-8 md:grid-cols-2 md:gap-12 bg-green-100">
             <div className="boldfirstletter">
               <h2 className="text-3xl font-bold tracking-tight text-green-800 sm:text-4xl">
                 Your Wellness, Anytime & Anywhere
@@ -109,7 +109,7 @@ export default function Home() {
                     <HeartPulse className="h-5 w-5" />
                   </div>
                   <div>
-                    <h4 className="text-green-800 font-semibold text-base">Your Care Plans</h4>
+                    <h4 className="text-green-800 font-semibold text-base">Your-care Plans</h4>
                     <p className="text-gray-600 text-sm">Customized health plans combining modern and traditional care</p>
                   </div>
                 </div>
@@ -120,7 +120,7 @@ export default function Home() {
                     <Image alt="ultracare" src={ultracare} className="h-5 w-5" />
                   </div>
                   <div>
-                    <h4 className="text-green-800 font-semibold text-base">Ultra Care & Comfort</h4>
+                    <h4 className="text-green-800 font-semibold text-base">Ultra Comfort</h4>
                     <p className="text-gray-600 text-sm">Receive expert care and guidance without stepping out through virtual consultations</p>
                   </div>
                 </div>

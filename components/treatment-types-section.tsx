@@ -79,7 +79,7 @@ export default function TreatmentTypesSection() {
             href="/book/naturopathy"
           />
           <TreatmentType
-            title="Siddha Medicine"
+            title="Siddha"
             description="One of India's oldest medical systems originated in Tamil Nadu, using herbs, minerals, and animal products."
             icon={siddha}
             href="/book/siddha"
@@ -91,7 +91,7 @@ export default function TreatmentTypesSection() {
             href="/book/yoga"
           />
           <TreatmentType
-            title="Unani Medicine"
+            title="Unani "
             description="Traditional system of medicine based on the teachings of Hippocrates and Galen, focusing on the balance of bodily humors."
             icon={homeopathy}
             href="/book/unani"

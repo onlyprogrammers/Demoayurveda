@@ -53,7 +53,7 @@ const slides = [
     title: "Siddha ",
     description: "An ancient Indian healing system focusing on the balance of body, mind, and spirit through herbal remedies, yoga, and meditation.",
     image: siddhatherapy,
-    color: "bg-orange-500/20",
+    color: "bg-orange-500/30",
     url: "book/siddha",
   },
   {
