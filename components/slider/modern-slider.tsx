@@ -113,7 +113,7 @@ export default function ModernSlider() {
   const currentSlide = slides[currentIndex]
 
   return (
-    <div className="relative w-full h-[400px] md:h-[400px] overflow-hidden rounded-xl py-2 modern-slider">
+    <div className="relative w-full h-[400px] md:h-[400px] overflow-hidden rounded-xl py-2 modern-slider bg-white">
       {/* Background gradient */}
       <motion.div
         className={cn("absolute inset-0 bg-gradient-to-r opacity-100 transition-all duration-700", currentSlide.color)}
