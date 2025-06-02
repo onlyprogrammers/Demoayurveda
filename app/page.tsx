@@ -71,7 +71,7 @@ export default function Home() {
             aboutSection.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10",
           )}
         >
-          <div className="grid gap-8 md:grid-cols-2 md:gap-12 bg-green-100">
+          <div className="grid p-4 gap-8 md:grid-cols-2 md:gap-12 bg-green-100">
             <div className="boldfirstletter">
               <h2 className="text-3xl font-bold tracking-tight text-green-800 sm:text-4xl">
                 Your Wellness, Anytime & Anywhere

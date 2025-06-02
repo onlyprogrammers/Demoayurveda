@@ -154,7 +154,8 @@ export default function TreatmentSystemsPage() {
           Digital Treatments
         </h1>
         <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-          We offer a comprehensive range of traditional Indian medical systems to provide holistic healthcare solutions tailored to your needs
+          We offer digital consultations in alternate medicine systems to provide holistic healthcare
+            solutions tailored to your needs
         </p>
       </div>
 

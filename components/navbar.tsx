@@ -42,8 +42,11 @@ export default function Navbar() {
               </Link>
             ))}
           </div>
+          <b>
+
           <i className="text-green-800 text-sm translate-y-3 ">" Trusted Traditional Care - Delivered Digitally"
           </i>
+          </b>
         </nav>
 
         <div className="hidden md:flex md:items-center md:gap-4">
