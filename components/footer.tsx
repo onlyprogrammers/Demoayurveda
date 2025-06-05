@@ -43,6 +43,11 @@ export default function Footer() {
                   FAQs
                 </Link>
               </li>
+              <li>
+                <Link href="/t&c" className="hover:text-white">
+                  T&C and Policies
+                </Link>
+              </li>
             </ul>
           </div>
 
