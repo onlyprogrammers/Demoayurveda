@@ -78,7 +78,7 @@ export default function TherapyBookingClient({ therapy }: ClientProps) {
         const all: Doctor[] = []
         for (let i = 1; i <= 6; i++) {
           const res = await fetch(
-            `http://65.1.92.125:8080/categories/${i + 10}/doctors-web/?all=true`
+            `https://65.1.92.125:8080/categories/${i + 10}/doctors-web/?all=true`
           )
           const { doctors: arr } = await res.json()
           arr.forEach((d: any) => {
