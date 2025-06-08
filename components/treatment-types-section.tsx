@@ -7,6 +7,9 @@ import homeopathy from "@/components/images/logos/homeopathy logo.PNG"
 import naturopathy from "@/components/images/logos/naturopathy.PNG"
 import siddha from "@/components/images/logos/siddha medicine.PNG"
 import yoga from "@/components/images/logos/Yoga Therapy.PNG"
+import axios from "axios"
+import { useEffect, useState } from "react"
+import doctordata from "@/components/doctors"
 
 interface TreatmentTypeProps {
   title: string
@@ -15,9 +18,13 @@ interface TreatmentTypeProps {
   href: string
   className?: string
 }
+const icons=[homeopathy, naturopathy, siddha, yoga, homeopathy]
+
 
 
 function TreatmentType({ title, description, icon, href, className }: TreatmentTypeProps) {
+
+  
   return (
     <div
       className={cn(
@@ -48,6 +55,18 @@ function TreatmentType({ title, description, icon, href, className }: TreatmentT
 }
 
 export default function TreatmentTypesSection() {
+    const [categories, setcategories] = useState([])
+  useEffect(() => {
+    const fetchcategories = async () => {
+      try {
+        const response = await axios.get("http://65.1.92.125:8080/categories/get-web/")
+        setcategories(response.data)
+      } catch (error) {
+        console.error("Error fetching categories:", error)
+      }
+    }
+    fetchcategories()
+  }, [])
   return (
     <section className="py-5 md:py-6 bg-green-100">
       <div className="container px-4 md:px-6">
@@ -58,44 +77,20 @@ export default function TreatmentTypesSection() {
             solutions tailored to your needs
           </p>
         </div>
-
+        
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        { categories.map((category, index) => (
+
           <TreatmentType
-            title="Ayurveda"
-            description="Ancient Indian system of medicine focusing on balance between mind, body, and spirit using herbs, diet, and lifestyle."
-            icon={ayurvedalogo}
-            href="/book/ayurveda"
+            title={category["name"]}
+            description={category["description"]}
+            key={category["id"]}
+            icon={icons[index]}
+            href={"/book/"+String(category["name"]).toLowerCase()}
           />
-          <TreatmentType
-            title="Homeopathy"
-            description="Alternative medical system based on the principle of 'like cures like' using highly diluted substances."
-            icon={homeopathy}
-            href="/book/homeopathy"
-          />
-          <TreatmentType
-            title="Naturopathy"
-            description="Natural healing approach that emphasizes the body's inherent ability to heal itself through diet, exercise, and lifestyle."
-            icon={naturopathy}
-            href="/book/naturopathy"
-          />
-          <TreatmentType
-            title="Siddha"
-            description="One of India's oldest medical systems originated in Tamil Nadu, using herbs, minerals, and animal products."
-            icon={siddha}
-            href="/book/siddha"
-          />
-          <TreatmentType
-            title="Yoga and Meditation"
-            description="Ancient practices that promote physical, mental, and spiritual well-being through postures, breathing techniques, and meditation."
-            icon={yoga}
-            href="/book/yoga"
-          />
-          <TreatmentType
-            title="Unani "
-            description="Traditional system of medicine based on the teachings of Hippocrates and Galen, focusing on the balance of bodily humors."
-            icon={homeopathy}
-            href="/book/unani"
-          />
+        ))
+        }
+        
            
         </div>
 

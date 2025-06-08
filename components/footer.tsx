@@ -28,7 +28,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/doctors" className="hover:text-white">
+                <Link href="/book/all" className="hover:text-white">
                   Medical Team
                 </Link>
               </li>
