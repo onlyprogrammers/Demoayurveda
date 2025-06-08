@@ -1,28 +1,37 @@
-import { notFound } from "next/navigation"
+// app/profile/[id]/ProfileClient.tsx
+"use client"
+
 import { Badge } from "@/components/ui/badge"
 import { Card } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Separator } from "@/components/ui/separator"
-import { User, Star, MapPin, Languages, Video, MessageSquare, Users, Calendar, CheckCircle, Mail } from "lucide-react"
-import doctorsData from "@/components/data.json"
-// Mock database - in a real app, this would come from a database
+import {
+  User,
+  Star,
+  MapPin,
+  Languages,
+  Video,
+  MessageSquare,
+  Users,
+  Calendar,
+  CheckCircle,
+  Mail,
+} from "lucide-react"
+import type { Doctor } from "@/types/doctor"
 
+interface Props {
+  doctor: Doctor
+}
 
-export default function DoctorProfilePage({ params }: { params: { username: string } }) {
-  const doctor = doctorsData.find((doc) => doc.username === params.username)
-
-  if (!doctor) {
-    notFound()
-  }
-
+export default function ProfileClient({ doctor }: Props) {
   return (
     <div className="container mx-auto py-8 px-4">
-      <Card className="overflow-hidden max-w-4xl mx-auto">
-        {/* Header with green background */}
+      <Card className="max-w-4xl mx-auto overflow-hidden">
+        {/* Header */}
         <div className="bg-emerald-600 p-6 text-white">
           <div className="flex flex-col md:flex-row items-center gap-6">
             <Avatar className="h-24 w-24 border-4 border-white">
-              <AvatarImage src={doctor.image || "/placeholder.svg"} alt={doctor.name} />
+              <AvatarImage src={doctor.image} alt={doctor.name} />
               <AvatarFallback className="bg-emerald-200 text-emerald-800 text-xl">
                 {doctor.name
                   .split(" ")
@@ -45,77 +54,49 @@ export default function DoctorProfilePage({ params }: { params: { username: stri
             </div>
 
             <div className="flex flex-col gap-2">
-              <Badge className="bg-emerald-100 hover:bg-emerald-200 text-emerald-800">{doctor.availability}</Badge>
-              <Badge className="bg-white hover:bg-gray-100 text-emerald-800">
+              <Badge className="bg-emerald-100 text-emerald-800">{doctor.availability}</Badge>
+              <Badge className="bg-white text-emerald-800">
                 {doctor.consultationFee} per session
               </Badge>
             </div>
           </div>
         </div>
 
-        {/* Profile details */}
+        {/* Details */}
         <div className="p-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Left info */}
             <div>
-              <h2 className="text-lg font-semibold text-emerald-800 mb-4">Doctor Information</h2>
-
+              <h2 className="text-lg font-semibold text-emerald-800 mb-4">
+                Doctor Information
+              </h2>
               <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <User className="h-5 w-5 text-emerald-600 mt-0.5" />
-                  <div>
-                    <p className="font-medium">Experience</p>
-                    <p className="text-gray-600">{doctor.experience} years</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <MapPin className="h-5 w-5 text-emerald-600 mt-0.5" />
-                  <div>
-                    <p className="font-medium">Location</p>
-                    <p className="text-gray-600">{doctor.location}</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <Languages className="h-5 w-5 text-emerald-600 mt-0.5" />
-                  <div>
-                    <p className="font-medium">Languages</p>
-                    <p className="text-gray-600">{doctor.languages.join(", ")}</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <Mail className="h-5 w-5 text-emerald-600 mt-0.5" />
-                  <div>
-                    <p className="font-medium">Contact</p>
-                    <p className="text-gray-600">{doctor.contactEmail}</p>
-                  </div>
-                </div>
+                <InfoRow icon={User} label="Experience" value={`${doctor.experience} years`} />
+                <InfoRow icon={MapPin} label="Location" value={doctor.location} />
+                <InfoRow icon={Languages} label="Languages" value={doctor.languages.join(", ")} />
+                <InfoRow icon={Mail} label="Contact" value={doctor.contactEmail} />
               </div>
             </div>
-
+            {/* Right info */}
             <div>
-              <h2 className="text-lg font-semibold text-emerald-800 mb-4">Consultation Details</h2>
-
+              <h2 className="text-lg font-semibold text-emerald-800 mb-4">
+                Consultation Details
+              </h2>
               <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <Users className="h-5 w-5 text-emerald-600 mt-0.5" />
-                  <div>
-                    <p className="font-medium">Patients Treated</p>
-                    <p className="text-gray-600">{doctor.patients}+</p>
-                  </div>
-                </div>
-
+                <InfoRow
+                  icon={Users}
+                  label="Patients Treated"
+                  value={`${doctor.patients}+`}
+                />
                 <div className="flex items-start gap-3">
                   <div className="flex h-5 w-5 items-center justify-center text-emerald-600 mt-0.5">
                     <span className="text-lg font-bold">H</span>
                   </div>
                   <div>
                     <p className="font-medium">Therapy Types</p>
-                    <p className="text-gray-600">Homeopathy</p>
+                    <p className="text-gray-600">{doctor.therapyTypes.join(", ")}</p>
                   </div>
                 </div>
-
                 <div className="flex flex-col gap-2">
                   <p className="font-medium flex items-center gap-2">
                     <Calendar className="h-5 w-5 text-emerald-600" />
@@ -143,15 +124,36 @@ export default function DoctorProfilePage({ params }: { params: { username: stri
           <Separator className="my-6 bg-emerald-100" />
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-emerald-600 hover:bg-emerald-700 text-white py-2 px-6 rounded-full font-medium transition-colors">
+            <button className="bg-emerald-600 hover:bg-emerald-700 text-white py-2 px-6 rounded-full font-medium">
               Book Appointment
             </button>
-            <button className="border border-emerald-600 text-emerald-600 hover:bg-emerald-50 py-2 px-6 rounded-full font-medium transition-colors">
+            <button className="border border-emerald-600 text-emerald-600 hover:bg-emerald-50 py-2 px-6 rounded-full font-medium">
               Contact Doctor
             </button>
           </div>
         </div>
       </Card>
+    </div>
+  )
+}
+
+// Helper sub-component for info rows
+function InfoRow({
+  icon: Icon,
+  label,
+  value,
+}: {
+  icon: any
+  label: string
+  value: string
+}) {
+  return (
+    <div className="flex items-start gap-3">
+      <Icon className="h-5 w-5 text-emerald-600 mt-0.5" />
+      <div>
+        <p className="font-medium">{label}</p>
+        <p className="text-gray-600">{value}</p>
+      </div>
     </div>
   )
 }

@@ -261,14 +261,12 @@ export default function TherapyBookingClient({ therapy }: ClientProps) {
                   </CardContent>
                   <CardFooter className="border-t pt-4 flex justify-between">
                     <Button variant="outline" className="w-[48%]">
-                      <Link href={`/profile/${doc.id}`} className="flex items-center gap-2">
+                      <Link href={`/profile/${doc.username}`} className="flex items-center gap-2">
                         <Users className="h-4 w-4" />
                         View Profile
                       </Link>
                     </Button>
-                    <Link href="/downloadapp">
                     <Button className="w-[48%]">Book Now</Button>
-                    </Link>
                   </CardFooter>
                 </Card>
               ))}
