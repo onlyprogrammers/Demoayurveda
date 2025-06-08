@@ -59,7 +59,7 @@ export default function TreatmentTypesSection() {
   useEffect(() => {
     const fetchcategories = async () => {
       try {
-        const response = await axios.get("http://65.1.92.125:8080/categories/get-web/")
+        const response = await axios.get("https://65.1.92.125:8080/categories/get-web/")
         setcategories(response.data)
       } catch (error) {
         console.error("Error fetching categories:", error)
