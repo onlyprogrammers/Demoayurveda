@@ -11,8 +11,9 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Dayush clinics - Digital Consultations for personalized healing",
   description:
-    "Experience authentic Kerala Ayurvedic treatments for pain relief, stress management, detox, weight loss, and more.",
-    generator: 'v0.dev'
+    "We offer digital consultations in alternate medicine systems to provide holistic healthcare solutions tailored to your needs.",
+    generator: 'Dayush Clinics',
+  applicationName: 'Dayush Clinics',
 }
 
 export default function RootLayout({
