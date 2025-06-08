@@ -1,21 +1,27 @@
+// app/book/[therapy]/TherapyBookingClient.tsx
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Image from "next/image"
-import { Clock, Filter, MapPin, Search, Star, ThumbsUp, Users } from "lucide-react"
-
+import { Clock, Filter, MapPin, Search, Star, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Badge } from "@/components/ui/badge"
-import { Separator } from "@/components/ui/separator"
-import { useParams } from "next/navigation"
-import { useRouter } from "next/router"
 import Link from "next/link"
 
+// ----------------------
 // Types
- export type Doctor = {
+// ----------------------
+export type Doctor = {
   id: number
   name: string
   specialty: string
@@ -44,135 +50,89 @@ type Treatment = {
   duration: string
   price: string
 }
-interface PageProps {
-  params: {
-    therapy: string
-  }
-}
 
 type TherapyType = "unani" | "ayurveda" | "homeo" | "yoga" | "all"
 
-export default function TherapyBookingPage({ params }: PageProps) {
-  // This would normally come from URL params or context
-  const { therapy } = useParams()
-  const therapyType = therapy as TherapyType
+interface ClientProps {
+  therapy: string
+}
 
-  const [selectedTherapy, setSelectedTherapy] = useState<TherapyType>( therapyType || "all")
+// ----------------------
+// Component
+// ----------------------
+export default function TherapyBookingClient({ therapy }: ClientProps) {
+  // normalize and cast the incoming param
+  const therapyParam = (therapy || "all").toLowerCase() as TherapyType
+
+  // state for tab, search, data, filters
+  const [selectedTherapy, setSelectedTherapy] = useState<TherapyType>(therapyParam)
   const [searchQuery, setSearchQuery] = useState("")
+  const [doctors, setDoctors] = useState<Doctor[]>([])
+  const [filteredDoctors, setFilteredDoctors] = useState<Doctor[]>([])
+  const [loading, setLoading] = useState(true)
 
-  // Mock data for doctors
-  const doctors: Doctor[] = [
-    {
-      id: 1,
-      name: "Dr. Ayush Sharma",
-      username: "drayushsharma3841",
-      specialty: "Ayurvedic Practitioner",
-      experience: 12,
-      rating: 4.8,
-      patients: 1500,
-      location: "Mumbai, Maharashtra",
-      image: "/placeholder.svg?height=300&width=300",
-      therapyTypes: ["ayurveda"],
-      availability: "Available Today",
-      consultationFee: "₹500",
-      languages: ["Hindi", "English"],
-      contactEmail: "ayush.sharma@dayush.com",
-      isVerified: true,
-      consultationMode: ["Video Call", "Chat"]
-    },
-    {
-      id: 2,
-      name: "Dr. Fatima Khan",
-      username: "drfatimakhan6719",
-      specialty: "Unani Medicine Expert",
-      experience: 8,
-      rating: 4.7,
-      patients: 1200,
-      location: "Delhi, NCR",
-      image: "/placeholder.svg?height=300&width=300",
-      therapyTypes: ["unani"],
-      availability: "Available Tomorrow",
-      consultationFee: "₹450",
-      languages: ["Urdu", "Hindi", "English"],
-      contactEmail: "fatima.khan@dayush.com",
-      isVerified: true,
-      consultationMode: ["Video Call"]
-    },
-    {
-      id: 3,
-      name: "Dr. Rajesh Gupta",
-      username: "drrajeshgupta2830",
-      specialty: "Homeopathic Doctor",
-      experience: 15,
-      rating: 4.9,
-      patients: 2000,
-      location: "Bangalore, Karnataka",
-      image: "/placeholder.svg?height=300&width=300",
-      therapyTypes: ["homeo"],
-      availability: "Available Today",
-      consultationFee: "₹550",
-      languages: ["English", "Kannada", "Hindi"],
-      contactEmail: "rajesh.gupta@dayush.com",
-      isVerified: true,
-      consultationMode: ["Video Call", "Audio Call"]
-    },
-    {
-      id: 4,
-      name: "Yogacharya Sunita Patel",
-      username: "sunita.patel9734",
-      specialty: "Yoga Therapist",
-      experience: 10,
-      rating: 4.6,
-      patients: 1800,
-      location: "Pune, Maharashtra",
-      image: "/placeholder.svg?height=300&width=300",
-      therapyTypes: ["yoga"],
-      availability: "Available Today",
-      consultationFee: "₹400",
-      languages: ["Marathi", "English", "Hindi"],
-      contactEmail: "sunita.patel@dayush.com",
-      isVerified: false,
-      consultationMode: ["Video Call"]
-    },
-    {
-      id: 5,
-      name: "Dr. Vikram Singh",
-      username: "drvikramsingh8255",
-      specialty: "Ayurvedic Surgeon",
-      experience: 14,
-      rating: 4.7,
-      patients: 1600,
-      location: "Jaipur, Rajasthan",
-      image: "/placeholder.svg?height=300&width=300",
-      therapyTypes: ["ayurveda"],
-      availability: "Available in 2 days",
-      consultationFee: "₹600",
-      languages: ["Hindi", "English", "Rajasthani"],
-      contactEmail: "vikram.singh@dayush.com",
-      isVerified: true,
-      consultationMode: ["Video Call", "Audio Call"]
-    },
-    {
-      id: 6,
-      name: "Dr. Meera Reddy",
-      username: "drmeerareddy6098",
-      specialty: "Homeopathic Consultant",
-      experience: 9,
-      rating: 4.5,
-      patients: 1100,
-      location: "Chennai, Tamil Nadu",
-      image: "/placeholder.svg?height=300&width=300",
-      therapyTypes: ["homeo"],
-      availability: "Available Today",
-      consultationFee: "₹450",
-      languages: ["Tamil", "English", "Hindi"],
-      contactEmail: "meera.reddy@dayush.com",
-      isVerified: true,
-      consultationMode: ["Video Call", "Chat"]
+  // Fetch & normalize once on mount
+  useEffect(() => {
+    async function loadDoctors() {
+      try {
+        const all: Doctor[] = []
+        for (let i = 1; i <= 6; i++) {
+          const res = await fetch(
+            `http://65.1.92.125:8080/categories/${i + 10}/doctors-web/?all=true`
+          )
+          const { doctors: arr } = await res.json()
+          arr.forEach((d: any) => {
+            all.push({
+              id: d.id,
+              name: d.user.username ?? "",
+              username: d.user.username ?? "",
+              specialty: d.specialty ?? "",
+              experience: d.years_of_experience ?? 0,
+              location: d.clinic_address ?? "",
+              image: "/placeholder.svg?height=300&width=300",
+              therapyTypes: [d.category_name ?? ""],
+              availability: d.status ?? "",
+              consultationFee: d.consultation_fee ?? "",
+              languages: (d.languages ?? "")
+                .split(",")
+                .map((l: string) => l.trim())
+                .filter(Boolean),
+              contactEmail: d.user.email ?? "",
+              isVerified: true,
+              consultationMode: ["Video Call", "Chat"],
+              rating: Math.floor(Math.random() * 5 + 1),
+              patients: Math.floor(Math.random() * 500 + 50),
+            })
+          })
+        }
+        setDoctors(all)
+      } catch (e) {
+        console.error("Failed to load doctors:", e)
+      } finally {
+        setLoading(false)
+      }
     }
-  ];
-  
-  // Mock data for treatments
+    loadDoctors()
+  }, [])
+
+  // Recompute filteredDoctors when dependencies change
+  useEffect(() => {
+    const fq = searchQuery.toLowerCase()
+    setFilteredDoctors(
+      doctors.filter((doc) => {
+        const matchesTherapy =
+          selectedTherapy === "all" ||
+          doc.therapyTypes.some((t) => t.toLowerCase() === selectedTherapy)
+        const matchesSearch =
+          fq === "" ||
+          doc.name.toLowerCase().includes(fq) ||
+          doc.specialty.toLowerCase().includes(fq)
+        return matchesTherapy && matchesSearch
+      })
+    )
+  }, [doctors, selectedTherapy, searchQuery])
+
+  // Static mock treatments
   const treatments: Treatment[] = [
     {
       id: 1,
@@ -194,62 +154,43 @@ export default function TherapyBookingPage({ params }: PageProps) {
       duration: "30-60 mins",
       price: "₹1,500 - ₹3,000",
     },
-    
   ]
-
-  // Filter doctors based on selected therapy
-  const filteredDoctors = doctors.filter(
-    (doctor) =>
-      (selectedTherapy === "all" || doctor.therapyTypes.includes(selectedTherapy)) &&
-      (searchQuery === "" ||
-        doctor.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        doctor.specialty.toLowerCase().includes(searchQuery.toLowerCase())),
-  )
-
-  // Filter treatments based on selected therapy
   const filteredTreatments = treatments.filter(
-    (treatment) => selectedTherapy === "all" || treatment.therapyType === selectedTherapy,
+    (t) => selectedTherapy === "all" || t.therapyType === selectedTherapy
   )
 
-  // Capitalize first letter for display
-  const formatTherapyName = (therapy: string) => {
-    return therapy.charAt(0).toUpperCase() + therapy.slice(1)
-  }
+  // Helper to capitalize labels
+  const formatTherapyName = (t: string) => t.charAt(0).toUpperCase() + t.slice(1)
 
   return (
     <div className="min-h-screen bg-gray-50">
-      
-
-      {/* Main Content */}
       <main className="container mx-auto px-4 py-6">
-        {/* Therapy Banner */}
+        {/* Banner */}
         <div className="relative w-full h-48 rounded-xl overflow-hidden mb-6 bg-gradient-to-r from-green-600 to-emerald-400">
           <div className="absolute inset-0 flex flex-col justify-center px-8 text-white">
-            <h1 className="text-3xl font-bold mb-2">{formatTherapyName(selectedTherapy)} </h1>
+            <h1 className="text-3xl font-bold mb-2">
+              {formatTherapyName(selectedTherapy)}
+            </h1>
             <p className="text-lg max-w-2xl">
-              Discover the best {formatTherapyName(selectedTherapy)} practitioners and popular treatments to improve
-              your health and wellbeing.
+              Discover the best {formatTherapyName(selectedTherapy)} practitioners and popular treatments.
             </p>
           </div>
         </div>
 
-        {/* Therapy Type Selector */}
+        {/* Tabs & Search */}
         <Tabs
           defaultValue={selectedTherapy}
           className="mb-8"
-          onValueChange={(value) => setSelectedTherapy(value as TherapyType)}
+          onValueChange={(v) => setSelectedTherapy(v as TherapyType)}
         >
-          <div className="flex items-center justify-between mb-4" style={{ overflowX:'scroll' }}>
+          <div className="flex items-center justify-between mb-4" style={{ overflowX: "scroll" }}>
             <TabsList>
-              <TabsTrigger value="all">All </TabsTrigger>
-              <TabsTrigger value="ayurveda">Ayurveda</TabsTrigger>
-              <TabsTrigger value="unani">Unani</TabsTrigger>
-              <TabsTrigger value="homeo">Homeopathy</TabsTrigger>
-              <TabsTrigger value="yoga">Yoga</TabsTrigger>
-              <TabsTrigger value="Siddha">Siddha</TabsTrigger>
-              <TabsTrigger value="Naturopathy">Naturopathy</TabsTrigger>
+              {["all", "ayurveda", "unani", "homeo", "yoga"].map((t) => (
+                <TabsTrigger key={t} value={t}>
+                  {formatTherapyName(t)}
+                </TabsTrigger>
+              ))}
             </TabsList>
-
             <div className="relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
               <Input
@@ -261,67 +202,73 @@ export default function TherapyBookingPage({ params }: PageProps) {
             </div>
           </div>
         </Tabs>
-        
 
         {/* Doctors Section */}
         <section className="mb-12">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-bold">Top {formatTherapyName(selectedTherapy)} Doctors</h2>
+            <h2 className="text-2xl font-bold">
+              Top {formatTherapyName(selectedTherapy)} Doctors
+            </h2>
             <Button variant="outline" size="sm" className="gap-2">
               <Filter className="h-4 w-4" />
               Filter
             </Button>
           </div>
 
-          {filteredDoctors.length === 0 ? (
+          {loading ? (
+            <p>Loading doctors…</p>
+          ) : filteredDoctors.length === 0 ? (
             <div className="text-center py-12 bg-gray-100 rounded-lg">
-              <p className="text-gray-500">No doctors found for the selected criteria.</p>
+              <p className="text-gray-500">No doctors found.</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredDoctors.map((doctor) => (
-                <Card key={doctor.id} className="overflow-hidden hover:shadow-lg transition-shadow">
+              {filteredDoctors.map((doc) => (
+                <Card key={doc.id} className="overflow-hidden hover:shadow-lg transition-shadow">
                   <CardHeader className="p-0">
                     <div className="relative h-48 bg-gray-200">
-                      <Image src={doctor.image || "/placeholder.svg"} alt={doctor.name} fill className="object-cover" />
-                      <Badge className="absolute top-4 right-4 bg-green-500">{doctor.availability}</Badge>
+                      <Image src={doc.image} alt={doc.name} fill className="object-cover" />
+                      <Badge className="absolute top-4 right-4 bg-green-500">
+                        {doc.availability}
+                      </Badge>
                     </div>
                   </CardHeader>
                   <CardContent className="pt-4">
                     <div className="flex items-start justify-between">
                       <div>
-                        <CardTitle className="text-xl">{doctor.name}</CardTitle>
-                        <CardDescription>{doctor.specialty}</CardDescription>
+                        <CardTitle className="text-xl">{doc.name}</CardTitle>
+                        <CardDescription>{doc.specialty}</CardDescription>
                       </div>
                       <div className="flex items-center gap-1 bg-yellow-50 px-2 py-1 rounded-md">
                         <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
-                        <span className="font-medium">{doctor.rating}</span>
+                        <span className="font-medium">{doc.rating}</span>
                       </div>
                     </div>
-
                     <div className="mt-4 grid grid-cols-2 gap-2 text-sm">
                       <div className="flex items-center gap-2">
                         <Clock className="h-4 w-4 text-gray-500" />
-                        <span>{doctor.experience} years exp.</span>
+                        <span>{doc.experience} yrs exp</span>
                       </div>
                       <div className="flex items-center gap-2">
                         <Users className="h-4 w-4 text-gray-500" />
-                        <span>{doctor.patients}+ patients</span>
+                        <span>{doc.patients}+ patients</span>
                       </div>
                       <div className="flex items-center gap-2 col-span-2">
                         <MapPin className="h-4 w-4 text-gray-500" />
-                        <span>{doctor.location}</span>
+                        <span>{doc.location}</span>
                       </div>
                     </div>
                   </CardContent>
                   <CardFooter className="border-t pt-4 flex justify-between">
                     <Button variant="outline" className="w-[48%]">
-                      <Link href={`/profile/${doctor.username}`} className="flex items-center gap-2">
+                      <Link href={`/profile/${doc.id}`} className="flex items-center gap-2">
                         <Users className="h-4 w-4" />
                         View Profile
                       </Link>
                     </Button>
+                    <Link href="/downloadapp">
                     <Button className="w-[48%]">Book Now</Button>
+                    </Link>
                   </CardFooter>
                 </Card>
               ))}
@@ -329,10 +276,10 @@ export default function TherapyBookingPage({ params }: PageProps) {
           )}
         </section>
 
-        {/* Popular Treatments Section */}
-        
-      </main>
+        {/* Treatments Section (optional) */}
+        {/* {filteredTreatments.map(...)} */}
 
+      </main>
     </div>
   )
 }
