@@ -18,7 +18,7 @@ interface TreatmentTypeProps {
   href: string
   className?: string
 }
-const icons=[homeopathy, naturopathy, siddha, yoga, homeopathy]
+const icons=[homeopathy, naturopathy, siddha, yoga, homeopathy, ayurvedalogo]
 
 
 
@@ -103,4 +103,3 @@ export default function TreatmentTypesSection() {
     </section>
   )
 }
-
