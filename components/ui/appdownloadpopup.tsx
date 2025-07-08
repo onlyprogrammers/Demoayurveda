@@ -5,6 +5,7 @@ import Image from "next/image"
 import { Phone, Video, Gift, Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
+import Link from "next/link"
 
 export default function AppDownloadPopup() {
   const [isOpen, setIsOpen] = useState(false)
@@ -72,10 +73,12 @@ export default function AppDownloadPopup() {
               </div>
             </div>
 
+          <Link href="https://play.google.com/store/apps/details?id=com.dayush.dayush_clinic_customer&hl=en_IN" target="_blank" rel="noopener noreferrer">
             <Button className="mt-4 gap-2">
               <Download className="h-4 w-4" />
               Download Now
             </Button>
+          </Link>
           </div>
 
           <div className="flex items-center justify-center">
