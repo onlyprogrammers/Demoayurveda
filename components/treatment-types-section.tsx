@@ -93,18 +93,18 @@ export default function TreatmentTypesSection() {
       try {
         const response = await axios.get("http://65.1.92.125:8080/categories/get-web/")
         setcategories(response.data)
-        if (response.data.length === 0) {
-          // If no categories are fetched, add default data
-          setcategories(add_dataIfNotFetched)
-        }
+        // if (response.data.length === 0) {
+        //   // If no categories are fetched, add default data
+        //   setcategories(add_dataIfNotFetched)
+        // }
       } catch (error) {
         console.error("Error fetching categories:", error)
-        setcategories(add_dataIfNotFetched)
        
       }
     }
     fetchcategories()
   }, [])
+    setcategories(add_dataIfNotFetched)
   return (
     <section className="py-5 md:py-6 bg-green-100">
       <div className="container px-4 md:px-6">
