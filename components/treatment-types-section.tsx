@@ -53,6 +53,38 @@ function TreatmentType({ title, description, icon, href, className }: TreatmentT
     </div>
   )
 }
+const add_dataIfNotFetched:any = [
+    {
+        "id": 11,
+        "name": "Ayurveda",
+        "description": "Ancient Indian system of medicine focusing on balance between mind, body, and spirit using herbs, diet, and lifestyle."
+    },
+    {
+        "id": 12,
+        "name": "Homeopathy",
+        "description": "Alternative medical system based on the principle of 'like cures like' using highly diluted substances."
+    },
+    {
+        "id": 13,
+        "name": "Naturopathy",
+        "description": "Natural healing approach that emphasizes the body's inherent ability to heal itself through diet, exercise, and lifestyle."
+    },
+    {
+        "id": 15,
+        "name": "Unani",
+        "description": "Traditional system of medicine based on the teachings of Hippocrates and Galen, focusing on the balance of bodily humors."
+    },
+    {
+        "id": 16,
+        "name": "Yoga and Meditation",
+        "description": "Ancient practices that promote physical, mental, and spiritual well-being through postures, breathing techniques, and meditation."
+    },
+    {
+        "id": 14,
+        "name": "Sidha",
+        "description": "One of India's oldest medical systems originated in Tamil Nadu, using herbs, minerals, and animal products."
+    }
+]
 
 export default function TreatmentTypesSection() {
     const [categories, setcategories] = useState([])
@@ -61,8 +93,14 @@ export default function TreatmentTypesSection() {
       try {
         const response = await axios.get("http://65.1.92.125:8080/categories/get-web/")
         setcategories(response.data)
+        if (response.data.length === 0) {
+          // If no categories are fetched, add default data
+          setcategories(add_dataIfNotFetched)
+        }
       } catch (error) {
         console.error("Error fetching categories:", error)
+        setcategories(add_dataIfNotFetched)
+       
       }
     }
     fetchcategories()
