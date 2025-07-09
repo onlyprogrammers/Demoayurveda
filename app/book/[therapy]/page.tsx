@@ -468,7 +468,9 @@ export default function TherapyBookingClient({ therapy }: ClientProps) {
                 <Card key={doc.id} className="overflow-hidden hover:shadow-lg transition-shadow">
                   <CardHeader className="p-0">
                     <div className="relative h-48 bg-gray-200">
-                      <Image src={doc.image} alt={doc.name} fill className="object-cover" />
+                      <Image src={`https://source.unsplash.com/400x400/?doctor&sig=${Math.random()}
+`
+} alt={doc.name} fill className="object-cover" />
                       <Badge className="absolute top-4 right-4 bg-green-500">
                         {doc.availability}
                       </Badge>
@@ -508,7 +510,7 @@ export default function TherapyBookingClient({ therapy }: ClientProps) {
                       </Link>
                     </Button>
                     <Link href="/downloadapp">
-                      <Button className="w-[48%]">Book Now</Button>
+                      <Button className="w-[100%]">Book Now</Button>
                     </Link>
                   </CardFooter>
                 </Card>
