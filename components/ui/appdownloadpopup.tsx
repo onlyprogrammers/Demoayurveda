@@ -6,6 +6,7 @@ import { Phone, Video, Gift, Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
 import Link from "next/link"
+import appinterface from '@/components/images/mobileapp.png'
 
 export default function AppDownloadPopup() {
   const [isOpen, setIsOpen] = useState(false)
@@ -83,7 +84,7 @@ export default function AppDownloadPopup() {
 
           <div className="flex items-center justify-center">
             <div className="relative h-64 w-full">
-              <Image src="/placeholder.svg?height=300&width=200" alt="Wellness App" fill className="object-contain" />
+              <Image src={appinterface} alt="Wellness App" fill className="object-contain" />
             </div>
           </div>
         </div>

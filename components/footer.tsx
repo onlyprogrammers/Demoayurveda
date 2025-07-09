@@ -23,12 +23,12 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/treatments" className="hover:text-white">
+                <Link href="/treatment-systems" className="hover:text-white">
                   Our Specializations
                 </Link>
               </li>
               <li>
-                <Link href="/doctors" className="hover:text-white">
+                <Link href="/book/all" className="hover:text-white">
                   Medical Team
                 </Link>
               </li>
@@ -41,6 +41,11 @@ export default function Footer() {
               <li>
                 <Link href="/faqs" className="hover:text-white">
                   FAQs
+                </Link>
+              </li>
+              <li>
+                <Link href="/t&c" className="hover:text-white">
+                  T&C and Policies
                 </Link>
               </li>
             </ul>
@@ -105,4 +110,3 @@ export default function Footer() {
     </footer>
   )
 }
-

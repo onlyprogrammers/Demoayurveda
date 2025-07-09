@@ -50,9 +50,7 @@ function TreatmentSystem({ title, description, icon, features, href }: Treatment
             ))}
           </ul>
 
-          <Button asChild className="bg-green-700 text-white hover:bg-green-800">
-            <Link href={href}>Learn More</Link>
-          </Button>
+          
         </div>
       </div>
     </div>
@@ -167,7 +165,7 @@ export default function TreatmentSystemsPage() {
             description={system.description}
             icon={system.icon}
             features={system.features}
-            href={system.href}
+            href={'/treatment-systems'}
           />
         ))}
       </div>

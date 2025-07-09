@@ -31,6 +31,9 @@ import skin from "@/components/images/diseas/skin disorders.JPG"
 import ultracare from "@/components/images/ultracare.png"
 import FAQComponent from "@/components/faqs"
 import DayushIntro from "@/components/otherinfo"
+import { Badge } from "@/components/ui/badge"
+import { Image as LucideImage } from "lucide-react"
+import Head from "next/head"
 
 
 export default function Home() {
@@ -41,10 +44,32 @@ export default function Home() {
   const consultationSection = useScrollAnimation()
   const testimonialsSection = useScrollAnimation()
 
+
+
   return (
     <div>
+      <Head>
+        <title>Dayush Clinics | Ayurveda, Homeopathy, Naturopathy, Unani, Yoga, Sidha Treatments</title>
+        <meta
+          name="description"
+          content="Dayush Clinics offers holistic wellness through Ayurveda, Homeopathy, Naturopathy, Unani, Yoga, and Sidha treatments, providing personalized natural healing and lifestyle consultations."
+        />
+        <meta
+          name="keywords"
+          content="
+      ayurveda treatment near me, ayurvedic doctor consultation, ayurvedic detox therapy, panchakarma treatment, holistic ayurveda therapy,
+      homeopathy treatment near me, homeopathic consultation online, holistic homeopathy care,
+      naturopathy clinic near me, naturopathic doctor consultation, natural healing therapy,
+      unani treatment near me, unani medicine consultation, traditional unani healing,
+      yoga classes near me, meditation classes near me, yoga for stress relief, guided meditation sessions,
+      sidha treatment near me, sidha medicine consultation, traditional sidha healing,
+      holistic wellness clinic, alternative medicine clinic, natural immunity booster treatments, mind body spirit balance therapies,
+      personalized healing plans, drugless treatment methods, natural treatment for lifestyle diseases"
+        />
+        <link rel="canonical" href="https://dayushclinics.com/" />
+      </Head>
       <ModernSlider />
-      
+
       {/* Treatment Types Section */}
       <section ref={treatmentTypesSection.ref as React.RefObject<HTMLElement>}>
         <div
@@ -226,7 +251,7 @@ export default function Home() {
         >
           <Link href="/faqs"> More</Link>
         </Button>
-       
+
       </div>
 
     </div>
