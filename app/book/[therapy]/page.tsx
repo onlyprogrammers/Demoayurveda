@@ -51,6 +51,244 @@ type Treatment = {
   price: string
 }
 
+const Doctors_if_notload: any = [
+  {
+    "id": 8,
+    "name": "Ayush Varma",
+    "username": "Ayush Varma",
+    "specialty": "",
+    "experience": 9,
+    "location": "Mumbai, India",
+    "image": "/placeholder.svg?height=300&width=300",
+    "therapyTypes": [
+      "Ayurveda"
+    ],
+    "availability": "offline",
+    "consultationFee": "250.00",
+    "languages": [
+      "English",
+      "Hindi & Marathi"
+    ],
+    "contactEmail": "aysuhvarma@gmail.com",
+    "isVerified": true,
+    "consultationMode": [
+      "Video Call",
+      "Chat"
+    ],
+    "rating": 4,
+    "patients": 443
+  },
+  {
+    "id": 9,
+    "name": "Vijendra Singh",
+    "username": "Vijendra Singh",
+    "specialty": "",
+    "experience": 20,
+    "location": "Jaipur, Rajastan",
+    "image": "/placeholder.svg?height=300&width=300",
+    "therapyTypes": [
+      "Ayurveda"
+    ],
+    "availability": "offline",
+    "consultationFee": "500.00",
+    "languages": [
+      "Hindi & English"
+    ],
+    "contactEmail": "vijendrasingh@gmail.com",
+    "isVerified": true,
+    "consultationMode": [
+      "Video Call",
+      "Chat"
+    ],
+    "rating": 1,
+    "patients": 407
+  },
+  {
+    "id": 6,
+    "name": "Anjali Raj",
+    "username": "Anjali Raj",
+    "specialty": "",
+    "experience": 11,
+    "location": "Kerala, India",
+    "image": "/placeholder.svg?height=300&width=300",
+    "therapyTypes": [
+      "Ayurveda"
+    ],
+    "availability": "offline",
+    "consultationFee": "1.00",
+    "languages": [
+      "English",
+      "Hindi",
+      "Malayalam",
+      "Tamil & Telugu"
+    ],
+    "contactEmail": "anjaliraj@gmail.com",
+    "isVerified": true,
+    "consultationMode": [
+      "Video Call",
+      "Chat"
+    ],
+    "rating": 4,
+    "patients": 70
+  },
+  {
+    "id": 7,
+    "name": "Rakhy M",
+    "username": "Rakhy M",
+    "specialty": "MS(Ayu)",
+    "experience": 11,
+    "location": "Kerala, India",
+    "image": "/placeholder.svg?height=300&width=300",
+    "therapyTypes": [
+      "Ayurveda"
+    ],
+    "availability": "offline",
+    "consultationFee": "1.00",
+    "languages": [
+      "English",
+      "Malayalam",
+      "Tamil & Kannada"
+    ],
+    "contactEmail": "rakhym@gmail.com",
+    "isVerified": true,
+    "consultationMode": [
+      "Video Call",
+      "Chat"
+    ],
+    "rating": 2,
+    "patients": 137
+  },
+  {
+    "id": 10,
+    "name": "Moinurul Haque",
+    "username": "Moinurul Haque",
+    "specialty": "",
+    "experience": 20,
+    "location": "Hyderabad, Telangana",
+    "image": "/placeholder.svg?height=300&width=300",
+    "therapyTypes": [
+      "Homeopathy"
+    ],
+    "availability": "offline",
+    "consultationFee": "500.00",
+    "languages": [
+      "Telugu",
+      "Hindi & English"
+    ],
+    "contactEmail": "moinurulhaque@gmail.com",
+    "isVerified": true,
+    "consultationMode": [
+      "Video Call",
+      "Chat"
+    ],
+    "rating": 1,
+    "patients": 424
+  },
+  {
+    "id": 13,
+    "name": "Aravind Pillai",
+    "username": "Aravind Pillai",
+    "specialty": "",
+    "experience": 15,
+    "location": "Banglore, Karnataka",
+    "image": "/placeholder.svg?height=300&width=300",
+    "therapyTypes": [
+      "Naturopathy"
+    ],
+    "availability": "offline",
+    "consultationFee": "500.00",
+    "languages": [
+      "Kannada",
+      "Malayalam",
+      "Tamil & English"
+    ],
+    "contactEmail": "aravindpillai@gmail.com",
+    "isVerified": true,
+    "consultationMode": [
+      "Video Call",
+      "Chat"
+    ],
+    "rating": 3,
+    "patients": 324
+  },
+  {
+    "id": 12,
+    "name": "Rohini Ramasamy",
+    "username": "Rohini Ramasamy",
+    "specialty": "",
+    "experience": 15,
+    "location": "Chennai, Tamil Nadu",
+    "image": "/placeholder.svg?height=300&width=300",
+    "therapyTypes": [
+      "Sidha"
+    ],
+    "availability": "offline",
+    "consultationFee": "500.00",
+    "languages": [
+      "Tamil & English"
+    ],
+    "contactEmail": "rohiniramasamy@gmail.com",
+    "isVerified": true,
+    "consultationMode": [
+      "Video Call",
+      "Chat"
+    ],
+    "rating": 3,
+    "patients": 426
+  },
+  {
+    "id": 11,
+    "name": "Fidha Fathima",
+    "username": "Fidha Fathima",
+    "specialty": "",
+    "experience": 8,
+    "location": "Kerala, India",
+    "image": "/placeholder.svg?height=300&width=300",
+    "therapyTypes": [
+      "Unani"
+    ],
+    "availability": "offline",
+    "consultationFee": "500.00",
+    "languages": [
+      "Malayalam & English"
+    ],
+    "contactEmail": "fidhafathima@gmail.com",
+    "isVerified": true,
+    "consultationMode": [
+      "Video Call",
+      "Chat"
+    ],
+    "rating": 3,
+    "patients": 276
+  },
+  {
+    "id": 14,
+    "name": "Yogacharya Shilpi Patel",
+    "username": "Yogacharya Shilpi Patel",
+    "specialty": "",
+    "experience": 10,
+    "location": "Surat, Gujarat",
+    "image": "/placeholder.svg?height=300&width=300",
+    "therapyTypes": [
+      "Yoga and Meditation"
+    ],
+    "availability": "offline",
+    "consultationFee": "500.00",
+    "languages": [
+      "Gujarati",
+      "Hindi & English"
+    ],
+    "contactEmail": "shilpipatel@gmail.com",
+    "isVerified": true,
+    "consultationMode": [
+      "Video Call",
+      "Chat"
+    ],
+    "rating": 1,
+    "patients": 529
+  }
+]
+
 type TherapyType = "unani" | "ayurveda" | "homeo" | "yoga" | "all"
 
 interface ClientProps {
@@ -106,8 +344,11 @@ export default function TherapyBookingClient({ therapy }: ClientProps) {
           })
         }
         setDoctors(all)
+        console.log("Loaded doctors:", all)
       } catch (e) {
         console.error("Failed to load doctors:", e)
+        setDoctors(Doctors_if_notload) // Fallback to static data
+
       } finally {
         setLoading(false)
       }
@@ -267,7 +508,7 @@ export default function TherapyBookingClient({ therapy }: ClientProps) {
                       </Link>
                     </Button>
                     <Link href="/downloadapp">
-                    <Button className="w-[48%]">Book Now</Button>
+                      <Button className="w-[48%]">Book Now</Button>
                     </Link>
                   </CardFooter>
                 </Card>
