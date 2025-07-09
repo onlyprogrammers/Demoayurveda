@@ -3,6 +3,7 @@
 import Image from "next/image"
 import { Phone, Video, Gift, Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 export default function DownloadPage() {
   return (
@@ -23,10 +24,12 @@ export default function DownloadPage() {
             Homeopathy, Siddha and more, all in one place.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
+            <Link href="https://play.google.com/store/apps/details?id=com.dayush.dayush_clinic_customer&hl=en_IN">
             <Button variant="default" size="lg" className="gap-2">
               <Download className="h-5 w-5" />
               Download for Android
             </Button>
+            </Link>
             <Button variant="outline" size="lg" className="gap-2">
               <Download className="h-5 w-5" />
               Download for iOS

@@ -469,8 +469,7 @@ export default function TherapyBookingClient({ therapy }: ClientProps) {
                   <CardHeader className="p-0">
                     <div className="relative h-48 bg-gray-200">
                       <Image src={`https://source.unsplash.com/400x400/?doctor&sig=${Math.random()}
-`
-} alt={doc.name} fill className="object-cover" />
+`} alt={doc.name} fill className="object-cover" />
                       <Badge className="absolute top-4 right-4 bg-green-500">
                         {doc.availability}
                       </Badge>
