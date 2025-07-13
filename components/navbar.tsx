@@ -7,13 +7,14 @@ import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
 import mainlogo from '@/components/images/logos/mainlogo.png'
-import doanloadapp from '@/components/images/Downloadapp.png'
+import doanloadapp from '@/components/images/Downloadapp3.png'
 
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "Treatments", href: "/treatment-systems" },
   { name: "Medical Team", href: "/book/all" },
   { name: "About Us", href: "/about" },
+   { name: "Career", href: "/career" },
   { name: "Contact", href: "/contact" },
 ]
 
@@ -21,7 +22,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white" style={{backgroundColor:"#aaf3c4"}}>
+    <header className="sticky top-0 z-50 w-full border-b bg-white" >
       <div className="container flex h-35 items-center justify-between px-4 md:px-6 mainnav">
         <Link href="/" className="flex items-center gap-2">
           <div className="flex items-center">
