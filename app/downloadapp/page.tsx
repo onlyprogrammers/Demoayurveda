@@ -4,7 +4,7 @@ import Image from "next/image"
 import { Phone, Video, Gift, Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import mobileapp from '@/components/images/mobileapp.png'
+import mobileapps from '@/components/images/mobileapp.png'
 
 export default function DownloadPage() {
   return (
@@ -40,7 +40,7 @@ export default function DownloadPage() {
         <div className="lg:w-1/2 mb-10 lg:mb-0">
           <div className="relative w-64 h-96 mx-auto">
             <Image
-              src={mobileapp}
+              src={mobileapps}
               alt="App Preview"
               fill
               className="object-contain"
