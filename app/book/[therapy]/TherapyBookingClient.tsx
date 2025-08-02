@@ -233,8 +233,9 @@ interface ClientProps {
 // ----------------------
 export default function TherapyBookingClient({ therapy }: ClientProps) {
   // normalize and cast the incoming param
-  const therapyParam = (therapy || "all").toLowerCase() as TherapyType
-
+  
+  const therapyParam = (therapy).toLowerCase() as TherapyType
+  
   // state for tab, search, data, filters
   const [selectedTherapy, setSelectedTherapy] = useState<TherapyType>(therapyParam)
   const [searchQuery, setSearchQuery] = useState("")
@@ -263,7 +264,7 @@ export default function TherapyBookingClient({ therapy }: ClientProps) {
               experience: d.years_of_experience ?? 0,
               location: d.clinic_address ?? "",
               image: "/placeholder.svg?height=300&width=300",
-              therapyTypes: [d.category_name ?? ""],
+              therapyTypes: [String(d.category_name).toLowerCase() ?? ""],
               availability: d.status ?? "",
               consultationFee: d.consultation_fee ?? "",
               languages: (d.languages ?? "")
@@ -295,8 +296,7 @@ export default function TherapyBookingClient({ therapy }: ClientProps) {
     const fq = searchQuery.toLowerCase()
     setFilteredDoctors(
       doctors.filter((doc) => {
-        const matchesTherapy =
-          selectedTherapy === "all" || doc.therapyTypes.some((t) => t.toLowerCase() === selectedTherapy)
+        const matchesTherapy =   String(doc.therapyTypes).toLowerCase().includes(selectedTherapy.toLowerCase()) || therapyParam === "all"
         const matchesSearch =
           fq === "" || doc.name.toLowerCase().includes(fq) || doc.specialty.toLowerCase().includes(fq)
         return matchesTherapy && matchesSearch
@@ -328,7 +328,7 @@ export default function TherapyBookingClient({ therapy }: ClientProps) {
     },
   ]
 
-  const filteredTreatments = treatments.filter((t) => selectedTherapy === "all" || t.therapyType === selectedTherapy)
+  const filteredTreatments = treatments.filter((t) => selectedTherapy === therapyParam || t.therapyType === selectedTherapy)
 
   // Helper to capitalize labels
   const formatTherapyName = (t: string) => t.charAt(0).toUpperCase() + t.slice(1)
@@ -367,9 +367,11 @@ export default function TherapyBookingClient({ therapy }: ClientProps) {
           <div className="flex items-center justify-between mb-4" style={{ overflowX: "scroll" }}>
             <TabsList>
               {["all", "ayurveda", "unani", "homeo", "yoga"].map((t) => (
+                <Link href={`${t}`}>
                 <TabsTrigger key={t} value={t}>
                   {formatTherapyName(t)}
                 </TabsTrigger>
+                </Link>
               ))}
             </TabsList>
             <div className="relative">

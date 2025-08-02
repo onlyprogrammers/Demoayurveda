@@ -1,6 +1,12 @@
-import TherapyBookingClient from "./TherapyBookingClient"
+'use client'
 
+import { useParams } from "next/navigation"
+import TherapyBookingClient from "./TherapyBookingClient"
+type params={
+  therapy:String
+}
 export default function Page({ searchParams }: { searchParams: { therapy?: string } }) {
-  const therapy = searchParams?.therapy || "all"
+  const param=useParams()
+  const therapy = param?.therapy || "all"
   return <TherapyBookingClient therapy={therapy} />
 }
