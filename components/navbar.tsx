@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
 import mainlogo from '@/components/images/logos/mainlogo.png'
-import doanloadapp from '@/components/images/downloadapp.PNG'
+import doanloadapp from '@/components/images/appdownload.png'
 
 const navLinks = [
   { name: "Home", href: "/" },
